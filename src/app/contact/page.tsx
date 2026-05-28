@@ -81,7 +81,7 @@ function MapSVG() {
       />
       {/* Label */}
       <rect x="180" y="232" width="140" height="26" rx="6" className="fill-white dark:fill-slate-900 stroke-slate-200/50 dark:stroke-slate-800/50" strokeWidth="1" />
-      <text x="250" y="248" textAnchor="middle" fontSize="10" fontWeight="750" className="fill-blue-600 dark:fill-blue-400 font-display">Society Connect HQ</text>
+      <text x="250" y="248" textAnchor="middle" fontSize="10" fontWeight="750" className="fill-blue-600 dark:fill-blue-400 font-display">SmartSocietyHub HQ</text>
     </svg>
   );
 }
@@ -281,8 +281,8 @@ export default function ContactPage() {
                   {
                     icon: <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
                     label: "Email",
-                    value: "hello@MySocietyHub.in",
-                    href: "mailto:hello@MySocietyHub.in",
+                    value: "hello@SmartSocietyHub.in",
+                    href: "mailto:hello@SmartSocietyHub.in",
                   },
                   {
                     icon: <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
@@ -319,10 +319,10 @@ export default function ContactPage() {
               {/* Support channels */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Sales Inquiry", email: "sales@MySocietyHub.in", icon: "💼" },
-                  { label: "Technical Support", email: "support@MySocietyHub.in", icon: "🔧" },
-                  { label: "Partnership", email: "partners@MySocietyHub.in", icon: "🤝" },
-                  { label: "Press & Media", email: "press@MySocietyHub.in", icon: "📰" },
+                  { label: "Sales Inquiry", email: "sales@SmartSocietyHub.in", icon: "💼" },
+                  { label: "Technical Support", email: "support@SmartSocietyHub.in", icon: "🔧" },
+                  { label: "Partnership", email: "partners@SmartSocietyHub.in", icon: "🤝" },
+                  { label: "Press & Media", email: "press@SmartSocietyHub.in", icon: "📰" },
                 ].map((c) => (
                   <div
                     key={c.label}
@@ -505,7 +505,7 @@ export default function ContactPage() {
                         </label>
                         <textarea
                           rows={4}
-                          placeholder="Tell us about your society, current pain points, and what you'd like to achieve with Society Connect…"
+                          placeholder="Tell us about your society, current pain points, and what you'd like to achieve with SmartSocietyHub…"
                           value={form.message}
                           onChange={(e) => handleChange("message", e.target.value)}
                           onBlur={() => handleBlur("message")}
@@ -592,7 +592,7 @@ export default function ContactPage() {
                 },
                 {
                   q: "Do you support multi-tower estates?",
-                  a: "Yes, Society Connect natively supports multi-tower, multi-gate, and wing layout topologies, allowing you to configure customized local rules for specific entry points.",
+                  a: "Yes, SmartSocietyHub natively supports multi-tower, multi-gate, and wing layout topologies, allowing you to configure customized local rules for specific entry points.",
                 },
               ].map((faq) => <FAQItem key={faq.q} {...faq} />)}
             </div>

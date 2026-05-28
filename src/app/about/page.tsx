@@ -196,7 +196,7 @@ const milestones = [
   { year: "2019", title: "The Idea", desc: "Founders experienced firsthand the chaos of paper visitor logs and manual maintenance collection in their own society." },
   { year: "2020", title: "First Prototype", desc: "A simple visitor management app built in a Pune apartment complex, tested with 50 flats and 3 security guards." },
   { year: "2021", title: "Private Beta", desc: "Expanded to 20 societies across Pune & Bengaluru. Iterated rapidly on resident payments and complaint workflows." },
-  { year: "2022", title: "Product Launch", desc: "Society Connect officially launched with full-stack features: gate management, maintenance billing, and notice boards." },
+  { year: "2022", title: "Product Launch", desc: "SmartSocietyHub officially launched with full-stack features: gate management, maintenance billing, and notice boards." },
   { year: "2024", title: "Scale & Growth", desc: "Serving 500+ societies, 75,000+ residents across 12 major Indian cities with 99.9% uptime and ISO-certified security." },
 ];
 
@@ -213,7 +213,7 @@ const values = [
     lucide: <Zap className="w-4 h-4" />,
     title: "Radical Efficiency",
     color: "from-amber-500 to-orange-650",
-    desc: "Every feature is built to save time. What used to take hours—collecting dues, logging visitors, managing complaints—takes seconds with Society Connect.",
+    desc: "Every feature is built to save time. What used to take hours—collecting dues, logging visitors, managing complaints—takes seconds with SmartSocietyHub.",
   },
   {
     icon: <TransparencySVG />,
@@ -283,7 +283,7 @@ export default function AboutPage() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
             >
-              Society Connect was born from a simple frustration—managing an apartment community should not require a legacy filing cabinet and three chaotic chat groups.
+              SmartSocietyHub was born from a simple frustration—managing an apartment community should not require a legacy filing cabinet and three chaotic chat groups.
             </motion.p>
           </motion.div>
         </section>
@@ -567,7 +567,7 @@ export default function AboutPage() {
                 Ready to transform your society?
               </h2>
               <p className="text-slate-350 text-base max-w-xl mx-auto leading-relaxed">
-                Join 500+ societies that trust Society Connect for secure, transparent, and efficient community management.
+                Join 500+ societies that trust SmartSocietyHub for secure, transparent, and efficient community management.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link

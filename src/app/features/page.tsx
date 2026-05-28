@@ -203,7 +203,7 @@ export default function FeaturesPage() {
               Engineered for Modern Communities
             </h1>
             <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Explore how Society Connect handles every element of modern apartment communities—from secure gate hardware emulation to strict double-entry ledger bookkeeping.
+              Explore how SmartSocietyHub handles every element of modern apartment communities—from secure gate hardware emulation to strict double-entry ledger bookkeeping.
             </p>
           </motion.div>
         </div>
@@ -295,7 +295,7 @@ export default function FeaturesPage() {
                 href={`${appUrl}/register`}
                 className="px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md font-bold transition-all duration-200 inline-flex items-center gap-2 group text-sm"
               >
-                Deploy Society Connect
+                Deploy SmartSocietyHub
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>

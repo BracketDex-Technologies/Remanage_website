@@ -192,11 +192,11 @@ export default function PricingPage() {
     },
     {
       q: "Is there any setup or onboarding fee?",
-      a: "No. Setting up a new society under Society Connect is completely self-serve and free. You can import residents, flats, and past ledger states using Excel templates instantly.",
+      a: "No. Setting up a new society under SmartSocietyHub is completely self-serve and free. You can import residents, flats, and past ledger states using Excel templates instantly.",
     },
     {
       q: "How do zero-fee UPI collections work?",
-      a: "Standard payment gateways charge 1.5% to 2% per transaction. Society Connect enables direct UPI deep linking: residents scan a dynamic QR code or click a link to make standard mobile bank-to-bank transfers. You reconcile the receipt instantly using UTR codes for zero fees.",
+      a: "Standard payment gateways charge 1.5% to 2% per transaction. SmartSocietyHub enables direct UPI deep linking: residents scan a dynamic QR code or click a link to make standard mobile bank-to-bank transfers. You reconcile the receipt instantly using UTR codes for zero fees.",
     },
     {
       q: "Can we cancel our subscription at any time?",
@@ -440,7 +440,7 @@ export default function PricingPage() {
               <span>Competitor Analysis</span>
             </span>
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-950 dark:text-white mb-4">
-              How Society Connect Compares
+              How SmartSocietyHub Compares
             </h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg">
               We design with clarity, security, and extensibility in mind. See how we match up against traditional systems.
@@ -455,7 +455,7 @@ export default function PricingPage() {
                   <th className="p-6 text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-[20%]">Aspect</th>
                   <th className="p-6 text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider w-[28%] bg-blue-50/10 dark:bg-blue-950/10 border-x border-blue-100/30 dark:border-blue-900/10">
                     <div className="flex items-center gap-2">
-                      <span>Society Connect</span>
+                      <span>SmartSocietyHub</span>
                       <span className="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded font-extrabold uppercase">OUR APP</span>
                     </div>
                   </th>
@@ -500,7 +500,7 @@ export default function PricingPage() {
           <div className="block md:hidden space-y-6">
             {/* Segmented control for choosing competitor */}
             <div className="flex flex-col gap-2 p-1.5 bg-slate-150/40 dark:bg-slate-900/50 rounded-2xl border border-slate-200/50 dark:border-slate-800/40">
-              <span className="text-xs font-bold text-slate-400 dark:text-slate-500 px-3 pt-1">Compare Society Connect with:</span>
+              <span className="text-xs font-bold text-slate-400 dark:text-slate-500 px-3 pt-1">Compare SmartSocietyHub with:</span>
               <div className="grid grid-cols-3 gap-1">
                 {(["mygate", "nobroker", "adda"] as const).map((comp) => (
                   <button
@@ -535,9 +535,9 @@ export default function PricingPage() {
                       <div key={idx} className="bg-slate-50/40 dark:bg-slate-900/20 border border-slate-200/50 dark:border-slate-800/40 rounded-2xl p-5 space-y-4">
                         <h4 className="font-bold text-slate-900 dark:text-white text-sm">{item.feature}</h4>
                         <div className="grid grid-cols-1 gap-3">
-                          {/* Society Connect Card */}
+                          {/* SmartSocietyHub Card */}
                           <div className="p-3.5 bg-blue-50/20 dark:bg-blue-950/20 border border-blue-100/30 dark:border-blue-900/30 rounded-xl">
-                            <span className="text-[9px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">Society Connect</span>
+                            <span className="text-[9px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">SmartSocietyHub</span>
                             <p className="text-xs font-medium text-slate-805 dark:text-slate-200 leading-relaxed">{item.sc}</p>
                           </div>
                           {/* Selected Competitor Card */}

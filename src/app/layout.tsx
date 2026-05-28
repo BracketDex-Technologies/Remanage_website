@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   keywords: [
-    "society connect",
+    "SmartSocietyHub",
     "society management",
     "apartment management app",
     "RWA software",
