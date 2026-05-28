@@ -281,8 +281,8 @@ export default function ContactPage() {
                   {
                     icon: <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
                     label: "Email",
-                    value: "hello@SmartSocietyHub.in",
-                    href: "mailto:hello@SmartSocietyHub.in",
+                    value: "hello@smartsocietyhub.in",
+                    href: "mailto:hello@smartsocietyhub.in",
                   },
                   {
                     icon: <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />,
@@ -319,10 +319,10 @@ export default function ContactPage() {
               {/* Support channels */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Sales Inquiry", email: "sales@SmartSocietyHub.in", icon: "💼" },
-                  { label: "Technical Support", email: "support@SmartSocietyHub.in", icon: "🔧" },
-                  { label: "Partnership", email: "partners@SmartSocietyHub.in", icon: "🤝" },
-                  { label: "Press & Media", email: "press@SmartSocietyHub.in", icon: "📰" },
+                  { label: "Sales Inquiry", email: "sales@smartsocietyhub.in", icon: "💼" },
+                  { label: "Technical Support", email: "support@smartsocietyhub.in", icon: "🔧" },
+                  { label: "Partnership", email: "partners@smartsocietyhub.in", icon: "🤝" },
+                  { label: "Press & Media", email: "press@smartsocietyhub.in", icon: "📰" },
                 ].map((c) => (
                   <div
                     key={c.label}

@@ -10,7 +10,7 @@ export const siteConfig = {
   description:
     "Approve visitors, pay maintenance, and keep notices, complaints, and records in one secure place — without gate calls or scattered group chats.",
   contact: {
-    email: "demo@SmartSocietyHub.co",
+    email: "demo@smartsocietyhub.co",
     phone: "+91 98765 43210",
     whatsapp: "https://wa.me/911800181800",
     whatsappDisplay: "+91-1800181800",
