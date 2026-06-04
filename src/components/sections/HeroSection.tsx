@@ -3,135 +3,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, LogIn } from "lucide-react";
+import { ArrowRight, Check, CircleDollarSign, KeyRound, MessageSquareText, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HeroTrustCard } from "@/components/sections/HeroTrustCard";
-import { trustPillars } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
+
+const outcomes = [
+  { icon: KeyRound, label: "Fewer gate calls" },
+  { icon: CircleDollarSign, label: "Clearer collections" },
+  { icon: MessageSquareText, label: "Trackable requests" },
+];
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
-
   return (
-    <section className="relative min-h-[min(88vh,840px)] overflow-hidden">
-      <motion.div
-        className="absolute inset-0"
-        initial={reduceMotion ? false : { scale: 1.12 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        aria-hidden
-      >
-        <motion.div
-          className="absolute inset-0"
-          animate={
-            reduceMotion
-              ? undefined
-              : {
-                  scale: [1, 1.06, 1],
-                }
-          }
-          transition={
-            reduceMotion
-              ? undefined
-              : {
-                  duration: 22,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }
-          }
-        >
-          <Image
-            src="/images/hero-bg.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </motion.div>
-      </motion.div>
-
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/45 to-slate-900/20"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_40%,rgba(37,99,235,0.12),transparent)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-background/90 via-background/40 to-transparent backdrop-blur-[4px] sm:h-32"
-        aria-hidden
-      />
-
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col px-4 pb-10 pt-14 sm:px-6 sm:pb-12 sm:pt-16 lg:px-10 xl:px-12">
-        <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
-          className="max-w-3xl space-y-6"
-        >
-          <div className="space-y-4">
-            <motion.h1
-              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.08, duration: 0.55 }}
-              className="text-hero text-white"
-            >
-              STREAMLINE SOCIETY OPERATIONS FROM ENTRY TO ACCOUNTING
-            </motion.h1>
-            <motion.p
-              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.16, duration: 0.5 }}
-              className="text-lead max-w-xl text-slate-200"
-            >
-              {siteConfig.description}
-            </motion.p>
+    <section className="overflow-hidden bg-white">
+      <div className="mx-auto max-w-[1440px] px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:px-10 lg:pb-20 lg:pt-16">
+        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="mx-auto max-w-5xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Society operations that do the busywork</p>
+          <h1 className="mt-5 font-heading text-[clamp(2.5rem,7vw,6.4rem)] font-semibold leading-[0.95] tracking-[-0.065em] text-slate-950">
+            Run every society workflow from one place
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-xl">
+            {siteConfig.description}
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg" className="bg-orange-600 px-8 hover:bg-orange-700"><Link href="/contact">Get started <ArrowRight /></Link></Button>
+            <Button asChild size="lg" variant="outline" className="px-8"><Link href="/features">See the platform</Link></Button>
           </div>
-
-          <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.24, duration: 0.5 }}
-            className="flex flex-col gap-3 sm:flex-row sm:items-center"
-          >
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-slate-900 shadow-lg shadow-black/20 hover:bg-slate-100"
-            >
-              <Link href="/contact">
-                Book a demo
-                <ArrowRight />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-white/50 bg-white/5 text-white backdrop-blur-sm hover:bg-white/15 hover:text-white"
-            >
-              <a href={siteConfig.links.login}>
-                <LogIn />
-                Sign in
-              </a>
-            </Button>
-          </motion.div>
         </motion.div>
 
-        <div className="mt-12 grid gap-4 sm:mt-14 sm:grid-cols-3 sm:gap-5 lg:mt-16">
-          {trustPillars.map((item, index) => (
-            <HeroTrustCard
-              key={item.label}
-              icon={item.icon}
-              label={item.label}
-              description={item.description}
-              theme={item.theme}
-              index={index}
-              reduceMotion={reduceMotion}
-            />
-          ))}
+        <div className="mt-10 grid gap-3 md:grid-cols-2">
+          <motion.div initial={reduceMotion ? false : { opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="relative hidden min-h-[340px] overflow-hidden rounded-2xl bg-slate-950 sm:block md:min-h-[380px]">
+            <Image src="/images/hero-bg.jpg" alt="Residential community managed with ReManage Society" fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-75" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-orange-300">Built for community operations</p>
+              <p className="mt-3 max-w-lg font-heading text-2xl font-semibold leading-tight sm:text-4xl">One dependable record for the work that keeps a society running.</p>
+            </div>
+          </motion.div>
+          <motion.div initial={reduceMotion ? false : { opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="flex min-h-[300px] flex-col justify-between rounded-2xl bg-orange-600 p-6 text-white md:min-h-[380px] md:p-8">
+            <div className="flex items-center justify-between"><ShieldCheck className="h-7 w-7" /><span className="rounded-full border border-white/30 px-3 py-1 text-[10px] font-bold uppercase tracking-wider">Committee-first</span></div>
+            <div>
+              <p className="max-w-xl font-heading text-2xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">Less time coordinating. More time improving the community.</p>
+              <ul className="mt-7 grid gap-3 sm:grid-cols-3">
+                {outcomes.map(({ icon: Icon, label }) => <li key={label} className="border-t border-white/30 pt-3 text-xs font-semibold"><Icon className="mb-3 h-4 w-4" />{label}</li>)}
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+        <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2">
+          {["Guided onboarding", "Role-based access", "Exportable records"].map(item => <span key={item} className="flex items-center gap-1.5 text-xs font-medium text-slate-500"><Check className="h-3.5 w-3.5 text-orange-600" />{item}</span>)}
         </div>
       </div>
     </section>

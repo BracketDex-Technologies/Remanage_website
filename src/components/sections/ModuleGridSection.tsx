@@ -150,21 +150,33 @@ export function ModuleGridSection() {
           </Link>
         </div>
 
-        {/* Mobile */}
-        <div className="mt-10 lg:hidden">
-          <StaticPhoneMock layoutId={layoutId} onQuickSelect={setActive} />
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {appShowcaseFeatures.map((feature, index) => {
+        {/* Unified Circular Layout */}
+        <div className="relative mx-auto mt-6 h-[450px] sm:h-[550px] md:h-[640px] lg:h-[min(720px,82vh)] lg:min-h-[640px] w-full max-w-6xl overflow-hidden sm:overflow-visible">
+          <div className="absolute inset-0 scale-[0.5] sm:scale-[0.6] md:scale-[0.75] lg:scale-100 origin-center">
+            <div
+              className="pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
+              aria-hidden
+            >
+              <div className="h-[520px] w-[min(360px,42vw)] rounded-[2.75rem]" />
+            </div>
+
+            <div className="absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 scale-[0.75] xl:scale-[0.85]">
+              <StaticPhoneMock layoutId={layoutId} onQuickSelect={setActive} />
+            </div>
+
+            {appShowcaseFeatures.map((feature) => {
               const slot = showcaseScatterBySlug[feature.slug];
+              if (!slot) return null;
+
               return (
-                <div key={feature.slug} className="flex justify-center">
-                  <FloatingCloud
-                    slot={{
-                      floatDelay: slot?.floatDelay ?? index * 0.3,
-                      floatDuration: slot?.floatDuration ?? 4.5,
-                    }}
-                    reduceMotion={reduceMotion}
-                  >
+                <div
+                  key={feature.slug}
+                  className="absolute left-1/2 top-1/2 z-40 w-auto"
+                  style={{
+                    transform: `translate(calc(-50% + ${slot.x}px), calc(-50% + ${slot.y}px)) rotate(${slot.rotate}deg)`,
+                  }}
+                >
+                  <FloatingCloud slot={slot} reduceMotion={reduceMotion}>
                     <ExpandableFeatureCard
                       item={showcaseToCard(feature)}
                       layoutId={layoutId}
@@ -177,44 +189,7 @@ export function ModuleGridSection() {
           </div>
         </div>
 
-        {/* Desktop: even ring around phone, cloud float */}
-        <div className="relative mx-auto mt-12 hidden h-[min(720px,82vh)] min-h-[640px] w-full max-w-6xl lg:block">
-          <div
-            className="pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
-            aria-hidden
-          >
-            <div className="h-[520px] w-[min(360px,42vw)] rounded-[2.75rem]" />
-          </div>
-
-          <div className="absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2">
-            <StaticPhoneMock layoutId={layoutId} onQuickSelect={setActive} />
-          </div>
-
-          {appShowcaseFeatures.map((feature) => {
-            const slot = showcaseScatterBySlug[feature.slug];
-            if (!slot) return null;
-
-            return (
-              <div
-                key={feature.slug}
-                className="absolute left-1/2 top-1/2 z-40 w-auto"
-                style={{
-                  transform: `translate(calc(-50% + ${slot.x}px), calc(-50% + ${slot.y}px)) rotate(${slot.rotate}deg)`,
-                }}
-              >
-                <FloatingCloud slot={slot} reduceMotion={reduceMotion}>
-                  <ExpandableFeatureCard
-                    item={showcaseToCard(feature)}
-                    layoutId={layoutId}
-                    onSelect={setActive}
-                  />
-                </FloatingCloud>
-              </div>
-            );
-          })}
-        </div>
-
-        <p className="mt-12 text-center text-sm text-slate-500">
+        <p className="mt-20 text-center text-sm text-slate-500">
           <span className="font-semibold text-slate-800">12+ modules</span> · 4 roles · one app
         </p>
       </div>

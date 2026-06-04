@@ -4,13 +4,13 @@ const appBase = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
 const fallbackAppPath = "/contact";
 
 export const siteConfig = {
-  name: "SmartSocietyHub",
-  legalName: "SmartSocietyHub",
-  tagline: "Smart society management for residents and committees",
+  name: "ReManage Society",
+  legalName: "ReManage Society",
+  tagline: "ReManage Society management for residents and committees",
   description:
     "Approve visitors, pay maintenance, and keep notices, complaints, and records in one secure place — without gate calls or scattered group chats.",
   contact: {
-    email: "demo@smartsocietyhub.co",
+    email: "demo@remanagesociety.com",
     phone: "+91 98765 43210",
     whatsapp: "https://wa.me/911800181800",
     whatsappDisplay: "+91-1800181800",
@@ -18,7 +18,7 @@ export const siteConfig = {
   },
   links: {
     app: appBase ?? fallbackAppPath,
-    apk: process.env.NEXT_PUBLIC_APK_URL ?? "#download-apk",
+    apk: process.env.NEXT_PUBLIC_APK_URL ?? "/contact",
     login: appBase ? `${appBase}/login` : fallbackAppPath,
     register: appBase ? `${appBase}/register` : fallbackAppPath,
     gate: appBase ? `${appBase}/gate` : fallbackAppPath,

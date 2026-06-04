@@ -23,7 +23,7 @@ export function RoleTabsSection() {
         <SectionHeading
           badge="Built for your role"
           title="Residents, owners, and committees — one platform"
-          description="Pick a perspective to see the workflows SmartSocietyHub supports out of the box."
+          description="Pick a perspective to see the workflows ReManage Society supports out of the box."
           className="max-w-2xl"
         />
 
@@ -98,7 +98,7 @@ export function RoleTabsSection() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-4">
+                <div className="rounded-lg border border-orange-100 bg-gradient-to-br from-orange-50 to-white p-4">
                   {activeTab === "residents" ? <ResidentPreview /> : <CommitteePreview />}
                 </div>
               </motion.div>
@@ -114,7 +114,7 @@ function ResidentPreview() {
   return (
     <div className="space-y-3">
       <p className="text-eyebrow text-primary">Resident preview</p>
-      <div className="rounded-md border border-dashed border-sky-200 bg-white p-3">
+      <div className="rounded-md border border-dashed border-orange-200 bg-white p-3">
         <p className="text-[10px] font-semibold uppercase text-slate-400">Visitor request</p>
         <p className="mt-1 text-sm font-semibold text-slate-900">Delivery · Flat 402</p>
       </div>

@@ -33,14 +33,14 @@ export const trustPillars = [
     label: "Gate-ready",
     description: "Visitor approvals and entry logs",
     theme: {
-      card: "border-emerald-200/75 bg-gradient-to-b from-white to-emerald-50/40",
-      iconBox: "bg-emerald-500/12 ring-emerald-500/25",
-      icon: "text-emerald-600",
-      watermark: "text-emerald-600/[0.09]",
-      glow: "bg-emerald-400/20",
-      hoverBorder: "hover:border-emerald-300/90",
-      hoverShadow: "hover:shadow-emerald-500/12",
-      topLine: "via-emerald-500/55",
+      card: "border-orange-200/75 bg-gradient-to-b from-white to-orange-50/50",
+      iconBox: "bg-orange-500/12 ring-orange-500/25",
+      icon: "text-orange-600",
+      watermark: "text-orange-600/[0.09]",
+      glow: "bg-orange-400/20",
+      hoverBorder: "hover:border-orange-300/90",
+      hoverShadow: "hover:shadow-orange-500/12",
+      topLine: "via-orange-500/55",
     },
   },
   {
@@ -48,14 +48,14 @@ export const trustPillars = [
     label: "Transparent dues",
     description: "Maintenance billing with UPI-friendly flows",
     theme: {
-      card: "border-blue-200/75 bg-gradient-to-b from-white to-blue-50/40",
-      iconBox: "bg-blue-500/12 ring-blue-500/25",
-      icon: "text-blue-600",
-      watermark: "text-blue-600/[0.09]",
-      glow: "bg-blue-400/20",
-      hoverBorder: "hover:border-blue-300/90",
-      hoverShadow: "hover:shadow-blue-500/12",
-      topLine: "via-blue-500/55",
+      card: "border-slate-200/75 bg-gradient-to-b from-white to-slate-50/50",
+      iconBox: "bg-slate-800/12 ring-slate-800/25",
+      icon: "text-slate-800",
+      watermark: "text-slate-800/[0.09]",
+      glow: "bg-slate-400/20",
+      hoverBorder: "hover:border-slate-300/90",
+      hoverShadow: "hover:shadow-slate-500/12",
+      topLine: "via-slate-600/55",
     },
   },
   {
@@ -63,14 +63,14 @@ export const trustPillars = [
     label: "Everyone included",
     description: "Owners, tenants, and committee roles",
     theme: {
-      card: "border-violet-200/75 bg-gradient-to-b from-white to-violet-50/40",
-      iconBox: "bg-violet-500/12 ring-violet-500/25",
-      icon: "text-violet-600",
-      watermark: "text-violet-600/[0.09]",
-      glow: "bg-violet-400/20",
-      hoverBorder: "hover:border-violet-300/90",
-      hoverShadow: "hover:shadow-violet-500/12",
-      topLine: "via-violet-500/55",
+      card: "border-amber-200/75 bg-gradient-to-b from-white to-amber-50/50",
+      iconBox: "bg-amber-500/12 ring-amber-500/25",
+      icon: "text-amber-600",
+      watermark: "text-amber-600/[0.09]",
+      glow: "bg-amber-400/20",
+      hoverBorder: "hover:border-amber-300/90",
+      hoverShadow: "hover:shadow-amber-500/12",
+      topLine: "via-amber-500/55",
     },
   },
 ] as const satisfies ReadonlyArray<{
@@ -196,8 +196,8 @@ export const appShowcaseFeatures: ShowcaseFeature[] = [
     extendedDescription:
       "Circulars, AGM notes, and society bye-laws stay searchable and dated. Everyone sees the same source of truth — no more digging through forwarded PDFs.",
     icon: Bell,
-    accent: "from-blue-500 to-cyan-500",
-    iconBg: "bg-blue-500/18 ring-blue-500/35",
+    accent: "from-orange-500 to-cyan-500",
+    iconBg: "bg-orange-500/18 ring-orange-500/35",
   },
   {
     slug: "visitors",
@@ -223,8 +223,8 @@ export const appShowcaseFeatures: ShowcaseFeature[] = [
     extendedDescription:
       "Maintenance dues, ledgers, and payment status in one view. Residents pay via UPI-friendly flows; admins reconcile collections without spreadsheets.",
     icon: Wallet,
-    accent: "from-indigo-500 to-blue-600",
-    iconBg: "bg-indigo-500/18 ring-indigo-500/35",
+    accent: "from-orange-500 to-orange-600",
+    iconBg: "bg-orange-500/18 ring-orange-500/35",
   },
   {
     slug: "marketplace",
@@ -250,8 +250,8 @@ export const appShowcaseFeatures: ShowcaseFeature[] = [
     extendedDescription:
       "Book clubhouse slots, courts, and society events without chasing the office on call. Availability and confirmations happen in-app, in real time.",
     icon: Calendar,
-    accent: "from-indigo-500 to-indigo-600",
-    iconBg: "bg-indigo-500/18 ring-indigo-500/35",
+    accent: "from-orange-500 to-orange-600",
+    iconBg: "bg-orange-500/18 ring-orange-500/35",
   },
 ];
 
@@ -277,7 +277,7 @@ export const appQuickActions = [
     description:
       "Book clubhouse, courts, and society events without chasing the office on call.",
     icon: Calendar,
-    accent: "from-indigo-500 to-indigo-600",
+    accent: "from-orange-500 to-orange-600",
   },
   {
     id: "notices",
@@ -286,7 +286,7 @@ export const appQuickActions = [
     description:
       "Circulars, AGM notes, and society rules in one searchable place for every resident.",
     icon: Bell,
-    accent: "from-blue-500 to-cyan-500",
+    accent: "from-orange-500 to-cyan-500",
   },
   {
     id: "marketplace",
@@ -365,7 +365,7 @@ export const roleTabs = {
       "Complaints with tracking",
       "Amenity and clubhouse bookings",
     ],
-    color: "from-blue-600 to-indigo-600",
+    color: "from-orange-600 to-orange-600",
   },
   committee: {
     id: "committee",
@@ -380,7 +380,7 @@ export const roleTabs = {
       "Complaint oversight and escalation",
       "Polls, meetings, and documents",
     ],
-    color: "from-indigo-600 to-violet-600",
+    color: "from-orange-600 to-violet-600",
   },
 } as const;
 

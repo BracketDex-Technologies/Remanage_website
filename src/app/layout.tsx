@@ -23,13 +23,14 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://remanagesociety.com"),
   title: `${siteConfig.name} — Society Management for Residents & Committees`,
   description: siteConfig.description,
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   keywords: [
-    "SmartSocietyHub",
+    "ReManage Society",
     "society management",
     "apartment management app",
     "RWA software",
@@ -37,6 +38,17 @@ export const metadata: Metadata = {
     "maintenance billing",
   ],
   authors: [{ name: `${siteConfig.legalName} Team` }],
+  openGraph: {
+    type: "website",
+    title: `${siteConfig.name} — Society operations without the chaos`,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary",
+    title: `${siteConfig.name} — Society operations without the chaos`,
+    description: siteConfig.description,
+  },
 };
 
 export default function RootLayout({

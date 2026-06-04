@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Building2, Download, Menu, MessageCircle, Phone, Sparkles, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 
@@ -25,24 +26,26 @@ export default function Navbar() {
         initial={{ y: -18, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-background/95 shadow-[0_8px_30px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl"
+        className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl"
       >
-        <nav className="flex h-[72px] w-full items-center justify-between gap-6 px-4 sm:px-6 lg:px-10 xl:px-12">
+        <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-3 px-3 sm:gap-6 sm:px-6 lg:px-10 xl:px-12">
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-2.5"
+            className="flex h-20 w-[160px] shrink-0 items-center justify-center overflow-hidden sm:w-[220px]"
             aria-label={`${siteConfig.name} home`}
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-slate-900 bg-white">
-              <Building2 className="h-5 w-5 text-slate-900" strokeWidth={2.4} />
-            </span>
-            <span className="font-heading text-xl font-semibold tracking-tight text-slate-900">
-              {siteConfig.name}
-            </span>
+            <Image
+              src="/logo.png"
+              alt={siteConfig.name}
+              width={824}
+              height={264}
+              priority
+              className="h-[180px] w-[180px] max-w-none object-contain mix-blend-multiply sm:h-[230px] sm:w-[230px]"
+            />
           </Link>
 
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
-            <div className="hidden items-center gap-1 lg:flex">
+            <div className="hidden items-center gap-0.5 lg:flex">
               {navLinks.map((link) => (
                 <NavLink key={link.href} href={link.href} active={pathname === link.href}>
                   {link.name}
@@ -50,37 +53,12 @@ export default function Navbar() {
               ))}
             </div>
 
-            <a
-              href={siteConfig.contact.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden items-center gap-2 rounded-full border border-slate-200 px-3 py-2 text-sm text-slate-600 transition hover:border-emerald-200 hover:text-slate-900 xl:flex"
-              aria-label={`WhatsApp ${siteConfig.contact.whatsappDisplay}`}
-            >
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500 text-white">
-                <MessageCircle className="h-3.5 w-3.5" strokeWidth={2.5} />
-              </span>
-              {siteConfig.contact.whatsappDisplay}
-            </a>
-
             <div className="hidden items-center gap-2 md:flex">
-              <Button asChild variant="outline" size="sm" className="hidden lg:inline-flex">
-                <a href={siteConfig.links.apk}>
-                  <Download />
-                  APK
-                </a>
-              </Button>
               <Button asChild variant="ghost" size="sm">
-                <Link href="/contact">
-                  <Sparkles className="fill-slate-900" />
-                  Demo
-                </Link>
+                <a href={siteConfig.links.login}>Sign in</a>
               </Button>
               <Button asChild size="sm">
-                <a href={siteConfig.contact.call}>
-                  <Phone />
-                  Call
-                </a>
+                <Link href="/contact">Book a demo <ArrowRight /></Link>
               </Button>
             </div>
 
@@ -112,7 +90,7 @@ export default function Navbar() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 360, damping: 34 }}
               onClick={(e) => e.stopPropagation()}
-              className="absolute bottom-0 right-0 top-0 flex w-[88%] max-w-sm flex-col bg-background p-6 shadow-2xl"
+              className="absolute bottom-0 right-0 top-0 flex w-[88%] max-w-sm flex-col bg-white p-6 shadow-2xl"
             >
               <div className="mb-6 flex items-center justify-between border-b border-slate-100 pb-4">
                 <span className="text-xl font-semibold">Menu</span>
@@ -140,10 +118,9 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="mt-auto flex flex-col gap-2 pt-6">
-                <Button asChild variant="accent" className="w-full">
-                  <a href={siteConfig.links.apk} onClick={() => setIsOpen(false)}>
-                    <Download />
-                    Download APK
+                <Button asChild variant="outline" className="w-full">
+                  <a href={siteConfig.links.login} onClick={() => setIsOpen(false)}>
+                    Sign in
                   </a>
                 </Button>
                 <Button asChild className="w-full">
@@ -172,7 +149,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+      className={`relative rounded-full px-3 py-2 text-xs font-semibold transition-colors xl:px-4 xl:text-sm ${
         active ? "text-slate-900" : "text-slate-600 hover:text-slate-900"
       }`}
     >

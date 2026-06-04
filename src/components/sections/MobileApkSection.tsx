@@ -1,92 +1,81 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Download, Play, Smartphone, Tablet } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Sun,
+} from "lucide-react";
 
 const highlights = [
-  { icon: Smartphone, text: "Visitor approvals and maintenance on mobile" },
-  { icon: Tablet, text: "Tablet-friendly guard gate console" },
-  { icon: Download, text: "Capacitor-ready society deployments" },
+  "Resident dashboard and quick actions",
+  "Bills, payments, and account history",
+  "Complaints with images and status",
+  "Visitors, amenities, notices, and society contacts",
 ];
 
 export function MobileApkSection() {
   return (
-    <section id="mobile" className="bg-background py-10 md:py-12">
-      <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:px-10 xl:px-12">
-        <motion.div
-          initial={{ opacity: 0, x: -12 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="space-y-4"
-        >
-          <p className="text-eyebrow text-primary">Mobile app</p>
-          <h2 className="font-heading text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Install SmartSocietyHub on Android today
-          </h2>
-          <p className="text-sm leading-relaxed text-slate-600">
-            Push-friendly approvals, dues, and notices for residents and committee members. Google
-            Play is on the roadmap — install the APK directly for pilot societies.
-          </p>
-          <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
-            {highlights.map((item) => (
-              <li key={item.text} className="flex items-start gap-2 text-sm text-slate-700">
-                <item.icon className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={2} />
-                {item.text}
-              </li>
-            ))}
-          </ul>
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            <Button asChild variant="accent">
-              <a href={siteConfig.links.apk}>
-                <Download />
-                Download APK
-              </a>
-            </Button>
-            <Badge variant="secondary" className="normal-case">
-              Google Play — coming soon
-            </Badge>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 12 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative overflow-hidden border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-slate-50 p-6"
-        >
-          <svg
-            className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 text-sky-200/80"
-            viewBox="0 0 100 100"
-            aria-hidden
+    <section id="mobile" className="border-y border-slate-200 bg-white py-14 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          
+          {/* Left Side: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -14 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="max-w-xl"
           >
-            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" />
-            <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" />
-          </svg>
-          <div className="relative grid grid-cols-2 gap-3">
-            <div className="col-span-2 flex items-center gap-3 border border-slate-200 bg-white p-4">
-              <div className="flex h-12 w-12 items-center justify-center bg-orange-500 text-white">
-                <Download className="h-6 w-6" />
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-600">Resident mobile app</p>
+            <h2 className="mt-4 font-heading text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl">
+              Everything residents need, without the clutter.
+            </h2>
+            <p className="mt-5 text-sm leading-relaxed text-slate-600 sm:text-base">
+              A focused mobile experience for paying dues, approving visitors, raising complaints, booking amenities, and staying informed.
+            </p>
+            <ul className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              {highlights.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm font-medium text-slate-700">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-orange-600" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex h-11 items-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-semibold text-white hover:bg-orange-600 transition-colors"
+              >
+                Request mobile demo <ArrowRight className="h-4 w-4" />
+              </Link>
+              <div className="flex items-center gap-2 rounded-full border border-slate-200 px-4 text-xs font-semibold text-slate-600">
+                <Sun className="h-3.5 w-3.5 text-orange-500" /> Light mode experience
               </div>
-              <div>
-                <p className="font-heading text-sm font-semibold text-slate-900">Direct APK</p>
-                <p className="text-xs text-slate-500">Available for Android installs</p>
-              </div>
             </div>
-            <div className="flex flex-col items-center justify-center border border-dashed border-slate-300 bg-white p-4 text-center">
-              <Play className="h-6 w-6 text-slate-300" />
-              <p className="mt-2 text-xs font-semibold text-slate-500">Play Store</p>
-              <p className="text-[10px] text-slate-400">Coming soon</p>
-            </div>
-            <div className="flex flex-col items-center justify-center border border-slate-200 bg-primary p-4 text-center text-white">
-              <Smartphone className="h-6 w-6" />
-              <p className="mt-2 text-xs font-bold">Live demo</p>
-              <p className="text-[10px] text-blue-100">Pilot ready</p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Right Side: Real CSS Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center items-center p-6 bg-slate-50 border border-slate-200/50 rounded-3xl"
+          >
+            <Image 
+              src="/mobile_mockup.png" 
+              alt="SmartSocietyHub Mobile App" 
+              width={600}
+              height={1200}
+              className="w-full max-w-[500px] h-auto mx-auto drop-shadow-2xl"
+              quality={100}
+              priority
+            />
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

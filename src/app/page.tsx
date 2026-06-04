@@ -3,13 +3,14 @@ import Footer from "@/components/Footer";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { MobileApkSection } from "@/components/sections/MobileApkSection";
 import { ModuleGridSection } from "@/components/sections/ModuleGridSection";
+import { MobileApkSection } from "@/components/sections/MobileApkSection";
 import { PainPointsSection } from "@/components/sections/PainPointsSection";
 import { RoleTabsSection } from "@/components/sections/RoleTabsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustTickerSection } from "@/components/sections/TrustTickerSection";
 import { WhyUsSection } from "@/components/sections/WhyUsSection";
+import { LegalEdgeSection } from "@/components/sections/LegalEdgeSection";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <HowItWorksSection />
         <MobileApkSection />
         <WhyUsSection />
+        <LegalEdgeSection />
         <TestimonialsSection />
         <FinalCtaSection />
       </main>

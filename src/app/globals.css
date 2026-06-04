@@ -4,11 +4,11 @@
 
 @theme {
   --color-background: #f6fbfe;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-primary-light: #60a5fa;
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
+  --color-primary-light: #fb923c;
   --color-success: #10b981;
-  --color-accent: #f97316;
+  --color-accent: #334155;
   --color-dark-bg: #030712;
   --color-card-light: #ffffff;
   --color-card-dark: #0b1120;
@@ -53,7 +53,7 @@
 }
 
 /* Footer — subtle sky + orange gradient drift from bottom */
-@keyframes footer-sky-drift {
+@keyframes footer-orange-drift {
   0%,
   100% {
     transform: translate(0, 0) scale(1);
@@ -88,7 +88,7 @@
 }
 
 .footer-gradient-sky {
-  animation: footer-sky-drift 22s ease-in-out infinite;
+  animation: footer-orange-drift 22s ease-in-out infinite;
 }
 
 .footer-gradient-orange {
@@ -110,12 +110,12 @@
 :root {
   --background: #f6fbfe;
   --foreground: #0f172a;
-  --primary: #2563eb;
+  --primary: #f97316;
   --primary-foreground: #ffffff;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
   --border: #e2e8f0;
-  --ring: #2563eb;
+  --ring: #f97316;
 }
 
 html {
@@ -357,7 +357,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   margin-top: -6px; /* Center the thumb */
-  background-color: #2563eb;
+  background-color: #f97316;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -380,7 +380,7 @@ input[type="range"]::-moz-range-track {
 }
 
 input[type="range"]::-moz-range-thumb {
-  background-color: #2563eb;
+  background-color: #f97316;
   height: 20px;
   width: 20px;
   border: none;
@@ -404,11 +404,11 @@ input[type="range"]::-moz-range-thumb:hover {
   background:
     linear-gradient(
       90deg,
-      rgba(14, 165, 233, 0),
-      rgba(14, 165, 233, 0.34) 18%,
-      rgba(14, 165, 233, 0.92) 50%,
-      rgba(14, 165, 233, 0.34) 82%,
-      rgba(14, 165, 233, 0)
+      rgba(249, 115, 22, 0),
+      rgba(249, 115, 22, 0.34) 18%,
+      rgba(249, 115, 22, 0.92) 50%,
+      rgba(249, 115, 22, 0.34) 82%,
+      rgba(249, 115, 22, 0)
     );
-  box-shadow: 0 0 24px rgba(14, 165, 233, 0.18);
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.18);
 }

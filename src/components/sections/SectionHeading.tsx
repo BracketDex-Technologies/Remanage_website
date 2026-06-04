@@ -40,7 +40,7 @@ export function SectionHeading({
       )}
     >
       {badge ? (
-        <p className={cn("text-eyebrow", dark ? "text-sky-300" : "text-primary")}>{badge}</p>
+        <p className={cn("text-eyebrow", dark ? "text-orange-300" : "text-primary")}>{badge}</p>
       ) : null}
       <div
         className={cn(
@@ -74,7 +74,7 @@ export function SectionHeading({
             href={action.href}
             className={cn(
               "inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold transition-colors",
-              dark ? "text-sky-300 hover:text-white" : "text-primary hover:text-primary-hover"
+              dark ? "text-orange-300 hover:text-white" : "text-primary hover:text-primary-hover"
             )}
           >
             {action.label}

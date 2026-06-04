@@ -29,7 +29,7 @@ function PricingSVG({ flatCount }: { flatCount: number }) {
         cy="100"
         r="80"
         fill="none"
-        className="stroke-blue-600/20 dark:stroke-blue-500/20"
+        className="stroke-orange-600/20 dark:stroke-orange-500/20"
         strokeWidth="3"
         strokeDasharray="8 6"
       />
@@ -54,14 +54,14 @@ function PricingSVG({ flatCount }: { flatCount: number }) {
         textAnchor="middle"
         fontSize="24"
         fontWeight="800"
-        className="fill-blue-600 dark:fill-blue-400 font-display"
+        className="fill-orange-600 dark:fill-orange-400 font-display"
       >
         {flatCount}
       </text>
       <defs>
         <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#60a5fa" />
-          <stop offset="100%" stopColor="#2563eb" />
+          <stop offset="0%" stopColor="#fb923c" />
+          <stop offset="100%" stopColor="#ea580c" />
         </linearGradient>
       </defs>
     </svg>
@@ -144,6 +144,13 @@ const comparisonCategories = [
         nobroker: "Neighbourhood discussion feeds, local group forums, classifieds listing",
         adda: "Official communications, circular boards, and meeting minutes",
       },
+      {
+        feature: "Legal & Compliance",
+        sc: "Free housing law advisory (Society Formation, Deemed Conveyance, RERA) powered by SocietyRights (5+ years Pune practice)",
+        mygate: "None. Software-only support with zero legal expertise or guidance.",
+        nobroker: "None. Third-party vendor directory listings only; no legal advisory.",
+        adda: "Standard email support/guides on housing acts, but no direct legal counsel.",
+      },
     ],
   },
   {
@@ -183,7 +190,9 @@ export default function PricingPage() {
   const starterCost = Math.max(starterMin, Math.round(flatCount * starterPricePerFlat * discountFactor));
   const premiumCost = Math.max(premiumMin, Math.round(flatCount * premiumPricePerFlat * discountFactor));
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+  const registerUrl = process.env.NEXT_PUBLIC_APP_URL
+    ? `${process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "")}/register`
+    : "/contact";
 
   const faqs = [
     {
@@ -192,11 +201,11 @@ export default function PricingPage() {
     },
     {
       q: "Is there any setup or onboarding fee?",
-      a: "No. Setting up a new society under SmartSocietyHub is completely self-serve and free. You can import residents, flats, and past ledger states using Excel templates instantly.",
+      a: "No. Setting up a new society under ReManage Society is completely self-serve and free. You can import residents, flats, and past ledger states using Excel templates instantly.",
     },
     {
       q: "How do zero-fee UPI collections work?",
-      a: "Standard payment gateways charge 1.5% to 2% per transaction. SmartSocietyHub enables direct UPI deep linking: residents scan a dynamic QR code or click a link to make standard mobile bank-to-bank transfers. You reconcile the receipt instantly using UTR codes for zero fees.",
+      a: "Standard payment gateways charge 1.5% to 2% per transaction. ReManage Society enables direct UPI deep linking: residents scan a dynamic QR code or click a link to make standard mobile bank-to-bank transfers. You reconcile the receipt instantly using UTR codes for zero fees.",
     },
     {
       q: "Can we cancel our subscription at any time?",
@@ -213,7 +222,7 @@ export default function PricingPage() {
       <Navbar />
 
       {/* Header */}
-      <section className="relative pt-32 pb-16 overflow-hidden border-b border-slate-100 dark:border-slate-800/40">
+      <section className="relative overflow-hidden border-b border-slate-100 pb-10 pt-16 dark:border-slate-800/40 sm:pb-14 sm:pt-20">
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
         
@@ -224,7 +233,7 @@ export default function PricingPage() {
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100/50 dark:border-blue-900/30">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 border border-orange-100/50 dark:border-orange-900/30">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Transparent Billing</span>
             </div>
@@ -239,7 +248,7 @@ export default function PricingPage() {
       </section>
 
       {/* Interactive Calculator Section */}
-      <section className="py-20 relative">
+      <section className="relative py-12 sm:py-16">
         <div className="max-w-5xl mx-auto px-4">
           <div className="bg-slate-50/50 dark:bg-slate-900/20 border border-slate-200/50 dark:border-slate-800/40 rounded-3xl p-8 md:p-12 mb-16 relative overflow-hidden backdrop-blur-sm">
             <div className="absolute inset-0 bg-gradient-to-tr from-slate-100/10 to-transparent dark:from-slate-800/5 dark:to-transparent pointer-events-none" />
@@ -252,7 +261,7 @@ export default function PricingPage() {
                     <label className="font-display font-bold text-lg text-slate-950 dark:text-white">
                       Number of Flats
                     </label>
-                    <span className="px-4 py-1.5 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-display font-bold text-xl rounded-xl border border-blue-100/30 dark:border-blue-900/30">
+                    <span className="px-4 py-1.5 bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 font-display font-bold text-xl rounded-xl border border-orange-100/30 dark:border-orange-900/30">
                       {flatCount} Units
                     </span>
                   </div>
@@ -263,7 +272,7 @@ export default function PricingPage() {
                     step="5"
                     value={flatCount}
                     onChange={(e) => setFlatCount(parseInt(e.target.value))}
-                    className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-blue-650"
+                    className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-orange-600"
                   />
                   <div className="flex justify-between text-xs text-slate-400 dark:text-slate-500 font-semibold mt-3">
                     <span>10 units</span>
@@ -287,7 +296,7 @@ export default function PricingPage() {
                     <button
                       onClick={() => setIsAnnual(!isAnnual)}
                       className={`w-12 h-6 rounded-full flex items-center p-1 transition-colors duration-200 ${
-                        isAnnual ? "bg-blue-600" : "bg-slate-350 dark:bg-slate-800"
+                        isAnnual ? "bg-orange-600" : "bg-slate-350 dark:bg-slate-800"
                       }`}
                       aria-label="Toggle billing cycle"
                     >
@@ -298,7 +307,7 @@ export default function PricingPage() {
                         transition={{ type: "spring", stiffness: 500, damping: 30 }}
                       />
                     </button>
-                    <span className={`text-sm font-semibold flex items-center gap-1.5 transition-colors ${isAnnual ? "text-blue-600 dark:text-blue-400" : "text-slate-450 dark:text-slate-500"}`}>
+                    <span className={`text-sm font-semibold flex items-center gap-1.5 transition-colors ${isAnnual ? "text-orange-600 dark:text-orange-400" : "text-slate-450 dark:text-slate-500"}`}>
                       Annually{" "}
                       <span className="text-[10px] bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded font-extrabold uppercase border border-emerald-100/50 dark:border-emerald-900/30">
                         20% Off
@@ -338,7 +347,7 @@ export default function PricingPage() {
                     "Domestic staff attendance log",
                   ].map((f) => (
                     <li key={f} className="flex gap-3 items-start">
-                      <Check className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-orange-600 dark:text-orange-400 shrink-0 mt-0.5" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -349,7 +358,7 @@ export default function PricingPage() {
                 </ul>
               </div>
               <a
-                href={`${appUrl}/register`}
+                href={registerUrl}
                 className="w-full py-3.5 bg-slate-50 hover:bg-slate-100 dark:bg-slate-800/50 dark:hover:bg-slate-800 text-slate-700 dark:text-white rounded-xl text-center font-bold text-sm transition-colors block border border-slate-100 dark:border-slate-800"
               >
                 Choose Starter
@@ -357,12 +366,12 @@ export default function PricingPage() {
             </div>
 
             {/* Premium Plan (Featured with subtle glow) */}
-            <div className="bg-white dark:bg-slate-900/60 border-2 border-blue-600 rounded-3xl p-8 relative flex flex-col justify-between shadow-xl shadow-blue-500/5 dark:shadow-blue-500/10 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/15 transition-all duration-200">
-              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-blue-600 text-white font-display font-extrabold text-[10px] rounded-full uppercase tracking-widest shadow-md">
+            <div className="bg-white dark:bg-slate-900/60 border-2 border-orange-600 rounded-3xl p-8 relative flex flex-col justify-between shadow-xl shadow-orange-500/5 dark:shadow-orange-500/10 hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/15 transition-all duration-200">
+              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-orange-600 text-white font-display font-extrabold text-[10px] rounded-full uppercase tracking-widest shadow-md">
                 RECOMMENDED
               </span>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400 block mb-2">
                   Complete ERP &amp; Gate
                 </span>
                 <h2 className="font-display font-bold text-2xl text-slate-900 dark:text-white mb-4">Premium App</h2>
@@ -383,15 +392,15 @@ export default function PricingPage() {
                     { label: "Amenity bookings & helpdesk ticketing", bold: false },
                   ].map((f) => (
                     <li key={f.label} className="flex gap-3 items-start">
-                      <Check className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-orange-600 dark:text-orange-400 shrink-0 mt-0.5" />
                       <span className={f.bold ? "font-semibold text-slate-800 dark:text-slate-200" : ""}>{f.label}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <a
-                href={`${appUrl}/register`}
-                className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-center font-bold text-sm shadow-lg shadow-blue-600/20 transition-all duration-200 block"
+                href={registerUrl}
+                className="w-full py-3.5 bg-orange-600 hover:bg-orange-700 text-white rounded-xl text-center font-bold text-sm shadow-lg shadow-orange-600/20 transition-all duration-200 block"
               >
                 Choose Premium
               </a>
@@ -413,7 +422,7 @@ export default function PricingPage() {
                     "API exports for financial systems",
                   ].map((f) => (
                     <li key={f} className="flex gap-3 items-start">
-                      <Check className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-orange-600 dark:text-orange-400 shrink-0 mt-0.5" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -435,12 +444,12 @@ export default function PricingPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#80808003_1px,transparent_1px)] bg-[size:24px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-100/50 dark:border-blue-900/30 mb-4">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 border border-orange-100/50 dark:border-orange-900/30 mb-4">
               <Shield className="w-3.5 h-3.5" />
               <span>Competitor Analysis</span>
             </span>
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-950 dark:text-white mb-4">
-              How SmartSocietyHub Compares
+              How ReManage Society Compares
             </h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg">
               We design with clarity, security, and extensibility in mind. See how we match up against traditional systems.
@@ -453,10 +462,10 @@ export default function PricingPage() {
               <thead>
                 <tr className="border-b border-slate-100 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-950/20">
                   <th className="p-6 text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-[20%]">Aspect</th>
-                  <th className="p-6 text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider w-[28%] bg-blue-50/10 dark:bg-blue-950/10 border-x border-blue-100/30 dark:border-blue-900/10">
+                  <th className="p-6 text-sm font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wider w-[28%] bg-orange-50/10 dark:bg-orange-950/10 border-x border-orange-100/30 dark:border-orange-900/10">
                     <div className="flex items-center gap-2">
-                      <span>SmartSocietyHub</span>
-                      <span className="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded font-extrabold uppercase">OUR APP</span>
+                      <span>ReManage Society</span>
+                      <span className="text-[10px] bg-orange-600 text-white px-2 py-0.5 rounded font-extrabold uppercase">OUR APP</span>
                     </div>
                   </th>
                   <th className="p-6 text-sm font-bold text-slate-655 dark:text-slate-300 uppercase tracking-wider w-[17%]">MyGate</th>
@@ -470,11 +479,11 @@ export default function PricingPage() {
                     <tr className="bg-slate-55/80 dark:bg-slate-950/40 border-y border-slate-150/40 dark:border-slate-800/60">
                       <td colSpan={5} className="py-4 px-6 font-display font-extrabold text-sm text-slate-800 dark:text-slate-200 tracking-wide">
                         <div className="flex items-center gap-2">
-                          {catIdx === 0 && <Layers className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                          {catIdx === 1 && <Shield className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                          {catIdx === 2 && <CreditCard className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                          {catIdx === 3 && <Activity className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                          {catIdx === 4 && <Smartphone className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
+                          {catIdx === 0 && <Layers className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                          {catIdx === 1 && <Shield className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                          {catIdx === 2 && <CreditCard className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                          {catIdx === 3 && <Activity className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                          {catIdx === 4 && <Smartphone className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
                           {category.title}
                         </div>
                       </td>
@@ -482,7 +491,7 @@ export default function PricingPage() {
                     {category.items.map((item, idx) => (
                       <tr key={idx} className="border-b border-slate-100 dark:border-slate-800/30 hover:bg-slate-50/20 dark:hover:bg-slate-800/10 transition-colors">
                         <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">{item.feature}</td>
-                        <td className="p-6 text-sm font-medium text-slate-800 dark:text-slate-200 bg-blue-50/5 dark:bg-blue-950/5 border-x border-blue-100/20 dark:border-blue-900/5">
+                        <td className="p-6 text-sm font-medium text-slate-800 dark:text-slate-200 bg-orange-50/5 dark:bg-orange-950/5 border-x border-orange-100/20 dark:border-orange-900/5">
                           {item.sc}
                         </td>
                         <td className="p-6 text-sm text-slate-500 dark:text-slate-450">{item.mygate}</td>
@@ -500,7 +509,7 @@ export default function PricingPage() {
           <div className="block md:hidden space-y-6">
             {/* Segmented control for choosing competitor */}
             <div className="flex flex-col gap-2 p-1.5 bg-slate-150/40 dark:bg-slate-900/50 rounded-2xl border border-slate-200/50 dark:border-slate-800/40">
-              <span className="text-xs font-bold text-slate-400 dark:text-slate-500 px-3 pt-1">Compare SmartSocietyHub with:</span>
+              <span className="text-xs font-bold text-slate-400 dark:text-slate-500 px-3 pt-1">Compare ReManage Society with:</span>
               <div className="grid grid-cols-3 gap-1">
                 {(["mygate", "nobroker", "adda"] as const).map((comp) => (
                   <button
@@ -508,7 +517,7 @@ export default function PricingPage() {
                     onClick={() => setCompareTarget(comp)}
                     className={`py-2 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                       compareTarget === comp
-                        ? "bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm"
+                        ? "bg-white dark:bg-slate-800 text-orange-600 dark:text-orange-400 shadow-sm"
                         : "text-slate-600 dark:text-slate-450 hover:text-slate-900 dark:hover:text-white"
                     }`}
                   >
@@ -523,11 +532,11 @@ export default function PricingPage() {
               {comparisonCategories.map((category, catIdx) => (
                 <div key={catIdx} className="space-y-4">
                   <h3 className="font-display font-extrabold text-sm text-slate-800 dark:text-slate-200 tracking-wide border-b border-slate-100 dark:border-slate-800 pb-2 uppercase flex items-center gap-2">
-                    {catIdx === 0 && <Layers className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                    {catIdx === 1 && <Shield className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                    {catIdx === 2 && <CreditCard className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                    {catIdx === 3 && <Activity className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
-                    {catIdx === 4 && <Smartphone className="w-4 h-4 text-blue-600 dark:text-blue-400" />}
+                    {catIdx === 0 && <Layers className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                    {catIdx === 1 && <Shield className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                    {catIdx === 2 && <CreditCard className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                    {catIdx === 3 && <Activity className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
+                    {catIdx === 4 && <Smartphone className="w-4 h-4 text-orange-600 dark:text-orange-400" />}
                     {category.title}
                   </h3>
                   <div className="space-y-4">
@@ -535,9 +544,9 @@ export default function PricingPage() {
                       <div key={idx} className="bg-slate-50/40 dark:bg-slate-900/20 border border-slate-200/50 dark:border-slate-800/40 rounded-2xl p-5 space-y-4">
                         <h4 className="font-bold text-slate-900 dark:text-white text-sm">{item.feature}</h4>
                         <div className="grid grid-cols-1 gap-3">
-                          {/* SmartSocietyHub Card */}
-                          <div className="p-3.5 bg-blue-50/20 dark:bg-blue-950/20 border border-blue-100/30 dark:border-blue-900/30 rounded-xl">
-                            <span className="text-[9px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">SmartSocietyHub</span>
+                          {/* ReManage Society Card */}
+                          <div className="p-3.5 bg-orange-50/20 dark:bg-orange-950/20 border border-orange-100/30 dark:border-orange-900/30 rounded-xl">
+                            <span className="text-[9px] font-extrabold text-orange-600 dark:text-orange-400 uppercase tracking-widest block mb-1">ReManage Society</span>
                             <p className="text-xs font-medium text-slate-805 dark:text-slate-200 leading-relaxed">{item.sc}</p>
                           </div>
                           {/* Selected Competitor Card */}

@@ -15,7 +15,7 @@ const variants = {
   muted: "bg-slate-50 text-slate-900",
   dark: "bg-slate-950 text-white",
   gradient:
-    "bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white",
+    "bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 text-white",
 };
 
 export function SectionShell({
