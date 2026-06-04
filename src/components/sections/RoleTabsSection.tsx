@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Building2, CheckCircle, Home, TrendingUp } from "lucide-react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -78,7 +79,7 @@ export function RoleTabsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="grid gap-6 lg:grid-cols-[1fr_minmax(0,260px)] lg:items-start"
+                className="grid gap-6 lg:grid-cols-[1fr_minmax(0,300px)] lg:items-start"
               >
                 <div>
                   <h3 className="font-heading text-xl font-semibold text-slate-900 sm:text-2xl">
@@ -98,8 +99,35 @@ export function RoleTabsSection() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-orange-100 bg-gradient-to-br from-orange-50 to-white p-4">
-                  {activeTab === "residents" ? <ResidentPreview /> : <CommitteePreview />}
+                {/* Dashboard preview screenshot */}
+                <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm">
+                  {activeTab === "residents" ? (
+                    <div className="relative">
+                      <p className="bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                        Resident app preview
+                      </p>
+                      <Image
+                        src="/images/resident-app-preview.png"
+                        alt="Resident mobile app — visitor approvals, bill payments, quick actions"
+                        width={400}
+                        height={700}
+                        className="h-auto w-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="relative">
+                      <p className="bg-gradient-to-r from-violet-500 to-violet-600 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                        Committee dashboard preview
+                      </p>
+                      <Image
+                        src="/images/committee-dashboard-preview.png"
+                        alt="Committee dashboard — collection progress, expenses, notice delivery"
+                        width={600}
+                        height={500}
+                        className="h-auto w-full object-cover"
+                      />
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -107,43 +135,5 @@ export function RoleTabsSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ResidentPreview() {
-  return (
-    <div className="space-y-3">
-      <p className="text-eyebrow text-primary">Resident preview</p>
-      <div className="rounded-md border border-dashed border-orange-200 bg-white p-3">
-        <p className="text-[10px] font-semibold uppercase text-slate-400">Visitor request</p>
-        <p className="mt-1 text-sm font-semibold text-slate-900">Delivery · Flat 402</p>
-      </div>
-      <div className="flex gap-2">
-        <span className="flex-1 rounded bg-emerald-500 py-1.5 text-center text-[10px] font-bold text-white">
-          Allow
-        </span>
-        <span className="flex-1 rounded bg-slate-100 py-1.5 text-center text-[10px] font-bold text-slate-600">
-          Deny
-        </span>
-      </div>
-      <p className="text-xs text-slate-500">Maintenance ₹3,500 · due 10 Jun</p>
-    </div>
-  );
-}
-
-function CommitteePreview() {
-  return (
-    <div className="space-y-3">
-      <p className="text-eyebrow text-primary">Committee preview</p>
-      <div className="flex items-center justify-between">
-        <span className="text-[10px] font-semibold uppercase text-slate-400">Collections</span>
-        <TrendingUp className="h-4 w-4 text-primary" />
-      </div>
-      <p className="font-heading text-2xl font-semibold text-slate-900">94.8%</p>
-      <div className="h-1.5 overflow-hidden rounded-full bg-slate-200">
-        <div className="h-full w-[94.8%] rounded-full bg-primary" />
-      </div>
-      <p className="text-xs text-slate-500">Expenses, notices & reports in one view</p>
-    </div>
   );
 }

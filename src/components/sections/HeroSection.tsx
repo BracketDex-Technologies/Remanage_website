@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Check, CircleDollarSign, KeyRound, MessageSquareText, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, CircleDollarSign, KeyRound, MessageSquareText, Scale, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 
@@ -30,6 +30,34 @@ export function HeroSection() {
             <Button asChild size="lg" className="bg-orange-600 px-8 hover:bg-orange-700"><Link href="/contact">Get started <ArrowRight /></Link></Button>
             <Button asChild size="lg" variant="outline" className="px-8"><Link href="/features">See the platform</Link></Button>
           </div>
+
+          {/* Starting price anchor */}
+          <p className="mt-4 text-sm text-slate-500">
+            Plans start at{" "}
+            <Link href="/pricing" className="font-semibold text-orange-600 underline-offset-4 hover:underline">
+              ₹10/flat/month
+            </Link>
+          </p>
+
+          {/* Legal expertise badge — strongest differentiator surfaced above fold */}
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.5 }}
+            className="mt-6 flex justify-center"
+          >
+            <a
+              href="https://societyrights.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 rounded-full border border-orange-200 bg-orange-50/60 px-4 py-2 transition-colors hover:border-orange-300 hover:bg-orange-50"
+            >
+              <Scale className="h-4 w-4 text-orange-600" />
+              <span className="text-xs font-semibold text-slate-700">
+                Backed by <span className="text-orange-600">SocietyRights</span> — 10+ years legal expertise for housing societies
+              </span>
+            </a>
+          </motion.div>
         </motion.div>
 
         <div className="mt-10 grid gap-3 md:grid-cols-2">

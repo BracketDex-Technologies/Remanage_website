@@ -8,6 +8,7 @@ import { MobileApkSection } from "@/components/sections/MobileApkSection";
 import { PainPointsSection } from "@/components/sections/PainPointsSection";
 import { RoleTabsSection } from "@/components/sections/RoleTabsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { ResourcesSection } from "@/components/sections/ResourcesSection";
 import { TrustTickerSection } from "@/components/sections/TrustTickerSection";
 import { WhyUsSection } from "@/components/sections/WhyUsSection";
 import { LegalEdgeSection } from "@/components/sections/LegalEdgeSection";
@@ -27,6 +28,7 @@ export default function Home() {
         <WhyUsSection />
         <LegalEdgeSection />
         <TestimonialsSection />
+        <ResourcesSection />
         <FinalCtaSection />
       </main>
       <Footer />

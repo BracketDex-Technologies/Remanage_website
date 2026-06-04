@@ -1,7 +1,7 @@
 import { pilotCommunities } from "@/lib/content";
 
 export function TrustTickerSection() {
-  const items = [...pilotCommunities, ...pilotCommunities];
+  const items = [...pilotCommunities, ...pilotCommunities, ...pilotCommunities];
 
   return (
     <section className="border-b border-slate-700 bg-slate-800 py-3.5">

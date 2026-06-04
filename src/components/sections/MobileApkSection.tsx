@@ -57,22 +57,34 @@ export function MobileApkSection() {
             </div>
           </motion.div>
 
-          {/* Right Side: Real CSS Mockup */}
+          {/* Right Side: Prominent Mobile Mockup */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex justify-center items-center p-6 bg-slate-50 border border-slate-200/50 rounded-3xl"
+            className="relative flex justify-center items-center px-6 py-10"
           >
-            <Image 
-              src="/mobile_mockup.png" 
-              alt="SmartSocietyHub Mobile App" 
-              width={600}
-              height={1200}
-              className="w-full max-w-[500px] h-auto mx-auto drop-shadow-2xl"
-              quality={100}
-              priority
-            />
+            {/* Decorative gradient background */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-50 via-slate-50 to-blue-50 border border-slate-200/50" />
+            
+            {/* Decorative floating dots */}
+            <div className="absolute top-6 right-8 h-20 w-20 rounded-full bg-orange-500/10 blur-2xl" />
+            <div className="absolute bottom-8 left-10 h-16 w-16 rounded-full bg-blue-500/10 blur-2xl" />
+
+            {/* Phone mockup with enhanced shadow and slight rotation */}
+            <div className="relative z-10 transform transition-transform duration-500 hover:scale-[1.02] hover:-rotate-1">
+              <div className="rounded-[2rem] bg-white p-2 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25),0_0_0_1px_rgba(0,0,0,0.05)]">
+                <Image 
+                  src="/mobile_mockup.png" 
+                  alt="SmartSocietyHub Mobile App — resident dashboard, visitor approvals, bill payments" 
+                  width={600}
+                  height={1200}
+                  className="w-full max-w-[460px] h-auto mx-auto rounded-[1.5rem]"
+                  quality={100}
+                  priority
+                />
+              </div>
+            </div>
           </motion.div>
 
         </div>

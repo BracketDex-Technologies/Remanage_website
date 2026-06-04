@@ -42,7 +42,7 @@ const legalServices = [
 ];
 
 const stats = [
-  { value: "5+", label: "Years", sub: "Legal practice" },
+  { value: "10+", label: "Years", sub: "Legal practice" },
   { value: "500+", label: "Societies", sub: "Clients served" },
   { value: "Free", label: "Legal Aid", sub: "With every plan" },
 ];
@@ -88,7 +88,7 @@ export function LegalEdgeSection() {
               <ExternalLink className="h-3 w-3" />
             </a>{" "}
             — Pune&apos;s trusted legal practice for housing societies — for
-            over 5 years. Now, we&apos;re bringing that deep legal knowledge
+            over 10 years. Now, we&apos;re bringing that deep legal knowledge
             into the digital management of your entire society.
           </p>
         </motion.div>

@@ -144,13 +144,6 @@ const comparisonCategories = [
         nobroker: "Neighbourhood discussion feeds, local group forums, classifieds listing",
         adda: "Official communications, circular boards, and meeting minutes",
       },
-      {
-        feature: "Legal & Compliance",
-        sc: "Free housing law advisory (Society Formation, Deemed Conveyance, RERA) powered by SocietyRights (5+ years Pune practice)",
-        mygate: "None. Software-only support with zero legal expertise or guidance.",
-        nobroker: "None. Third-party vendor directory listings only; no legal advisory.",
-        adda: "Standard email support/guides on housing acts, but no direct legal counsel.",
-      },
     ],
   },
   {
@@ -225,7 +218,7 @@ export default function PricingPage() {
       <section className="relative overflow-hidden border-b border-slate-100 pb-10 pt-16 dark:border-slate-800/40 sm:pb-14 sm:pt-20">
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
-        
+
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -253,7 +246,7 @@ export default function PricingPage() {
           <div className="bg-slate-50/50 dark:bg-slate-900/20 border border-slate-200/50 dark:border-slate-800/40 rounded-3xl p-8 md:p-12 mb-16 relative overflow-hidden backdrop-blur-sm">
             <div className="absolute inset-0 bg-gradient-to-tr from-slate-100/10 to-transparent dark:from-slate-800/5 dark:to-transparent pointer-events-none" />
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-              
+
               {/* Slider Controls */}
               <div className="lg:col-span-7 space-y-8">
                 <div>
@@ -295,9 +288,8 @@ export default function PricingPage() {
                     </span>
                     <button
                       onClick={() => setIsAnnual(!isAnnual)}
-                      className={`w-12 h-6 rounded-full flex items-center p-1 transition-colors duration-200 ${
-                        isAnnual ? "bg-orange-600" : "bg-slate-350 dark:bg-slate-800"
-                      }`}
+                      className={`w-12 h-6 rounded-full flex items-center p-1 transition-colors duration-200 ${isAnnual ? "bg-orange-600" : "bg-slate-350 dark:bg-slate-800"
+                        }`}
                       aria-label="Toggle billing cycle"
                     >
                       <motion.div
@@ -515,11 +507,10 @@ export default function PricingPage() {
                   <button
                     key={comp}
                     onClick={() => setCompareTarget(comp)}
-                    className={`py-2 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-                      compareTarget === comp
+                    className={`py-2 px-3 text-xs font-bold rounded-xl transition-all cursor-pointer ${compareTarget === comp
                         ? "bg-white dark:bg-slate-800 text-orange-600 dark:text-orange-400 shadow-sm"
                         : "text-slate-600 dark:text-slate-450 hover:text-slate-900 dark:hover:text-white"
-                    }`}
+                      }`}
                   >
                     {comp === "mygate" ? "MyGate" : comp === "nobroker" ? "NoBrokerHood" : "ADDA"}
                   </button>

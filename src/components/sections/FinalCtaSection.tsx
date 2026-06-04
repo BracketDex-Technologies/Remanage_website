@@ -8,7 +8,12 @@ import { siteConfig } from "@/lib/site";
 
 export function FinalCtaSection() {
   return (
-    <section className="bg-gradient-to-r from-primary via-blue-600 to-indigo-700 py-10 md:py-12">
+    <section
+      className="py-12 md:py-16 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #ff7820 0%, #ffa35c 40%, #06b6d4 85%, #0ea5e9 100%)"
+      }}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -20,16 +25,9 @@ export function FinalCtaSection() {
             <h2 className="font-heading text-2xl font-semibold text-white sm:text-3xl">
               Ready to simplify society operations?
             </h2>
-            <p className="text-sm leading-relaxed text-blue-100 sm:text-base">
-              Book a walkthrough for your committee or download the APK for residents.
+            <p className="text-sm leading-relaxed text-white/90 sm:text-base">
+              Book a walkthrough for your committee or download the resident app. Plans start at just ₹10/flat/month.
             </p>
-            <Link
-              href={siteConfig.links.register}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/90 underline-offset-4 transition-colors hover:text-white hover:underline"
-            >
-              Create your society workspace
-              <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
 
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:min-w-[320px]">
@@ -42,11 +40,12 @@ export function FinalCtaSection() {
             <Button
               asChild
               size="lg"
-              className="w-full justify-center bg-orange-500 text-white hover:bg-orange-600"
+              variant="ghost"
+              className="w-full justify-center border border-white/25 text-white hover:bg-white/10 hover:text-white"
             >
               <a href={siteConfig.links.apk}>
                 <Download />
-                Download APK
+                Download resident app
               </a>
             </Button>
           </div>
