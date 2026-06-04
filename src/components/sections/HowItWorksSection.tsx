@@ -41,7 +41,7 @@ export function HowItWorksSection() {
         </div>
 
         {/* Mobile & Tablet View: Vertical Stack */}
-        <div className="md:hidden pointer-events-auto -mx-4 sm:-mx-6 grid gap-px border-y border-white/20 bg-white/5 grid-cols-1 flex-1">
+        <div className="md:hidden pointer-events-auto flex flex-col gap-4 px-1 py-2">
           {howItWorks.map((item, index) => (
             <motion.div
               key={item.step}
@@ -49,7 +49,7 @@ export function HowItWorksSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="relative bg-slate-900/25 px-6 py-8 backdrop-blur-[2px] sm:px-8 sm:py-10 overflow-hidden flex-1"
+              className="relative rounded-2xl border border-white/15 bg-white/[0.06] px-5 py-6 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.25)] overflow-hidden"
             >
               <GlowingEffect
                 spread={40}
@@ -60,9 +60,11 @@ export function HowItWorksSection() {
                 borderWidth={2}
                 variant="default"
               />
+              {/* Subtle gradient accent along top edge */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-400/50 to-transparent" aria-hidden />
               <div className="relative z-10">
                 <span className="font-heading text-3xl font-semibold text-orange-300/50">{item.step}</span>
-                <h3 className="mt-2 font-heading text-base font-semibold text-white">{item.title}</h3>
+                <h3 className="mt-2 font-heading text-lg font-semibold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-200/90">{item.description}</p>
               </div>
             </motion.div>

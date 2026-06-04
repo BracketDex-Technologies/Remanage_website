@@ -175,20 +175,20 @@ export function ExpandableFeatureCard({
       type="button"
       onClick={() => onSelect(item)}
       style={style}
-      className={`relative w-max min-w-[12rem] max-w-[19.25rem] cursor-pointer rounded-xl border text-left shadow-sm transition-shadow hover:shadow-md ${item.subtleBg} ${className ?? ""}`}
+      className={`relative w-full md:w-max md:min-w-[12rem] md:max-w-[19.25rem] cursor-pointer rounded-xl border text-left shadow-sm transition-shadow hover:shadow-md ${item.subtleBg} ${className ?? ""}`}
     >
-      <div className="relative flex items-center gap-3 px-3.5 py-3">
+      <div className="relative flex items-center gap-2.5 px-3 py-2.5 md:gap-3 md:px-3.5 md:py-3">
         <motion.div
           layoutId={`header-${item.id}-${layoutId}`}
           transition={layoutFast}
-          className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${item.accent}`}
+          className={`inline-flex h-8 w-8 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${item.accent}`}
         >
           <Icon className="h-[18px] w-[18px] text-white" strokeWidth={2} aria-hidden />
         </motion.div>
         <motion.span
           layoutId={`title-${item.id}-${layoutId}`}
           transition={layoutFast}
-          className="font-heading text-[0.9375rem] font-semibold leading-snug whitespace-nowrap text-slate-900"
+          className="font-heading text-[0.8125rem] md:text-[0.9375rem] font-semibold leading-snug text-slate-900"
         >
           {item.title}
         </motion.span>

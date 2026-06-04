@@ -54,7 +54,7 @@ function StaticPhoneMock({
   onQuickSelect: ReturnType<typeof useExpandableCard>["setActive"];
 }) {
   return (
-    <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[360px]">
+    <div className="relative mx-auto w-full max-w-[260px] md:max-w-[320px] lg:max-w-[360px]">
       <div className="overflow-hidden rounded-[2.5rem] border-[11px] border-slate-900 bg-slate-900 shadow-xl">
         <div className="bg-gradient-to-b from-slate-50 to-white px-4 pb-28 pt-3">
           <div className="mb-3 flex justify-between text-[10px] font-semibold text-slate-500">
@@ -150,9 +150,36 @@ export function ModuleGridSection() {
           </Link>
         </div>
 
-        {/* Unified Circular Layout */}
-        <div className="relative mx-auto mt-6 h-[450px] sm:h-[550px] md:h-[640px] lg:h-[min(720px,82vh)] lg:min-h-[640px] w-full max-w-6xl overflow-hidden sm:overflow-visible">
-          <div className="absolute inset-0 scale-[0.5] sm:scale-[0.6] md:scale-[0.75] lg:scale-100 origin-center">
+        {/* ===== MOBILE / SMALL TABLET: stacked phone + grid ===== */}
+        <div className="mt-10 md:hidden">
+          {/* Phone mockup — readable size */}
+          <div className="mx-auto mb-12 w-full max-w-[280px]">
+            <StaticPhoneMock layoutId={layoutId} onQuickSelect={setActive} />
+          </div>
+
+          {/* Feature cards in a clean 2-col grid */}
+          <div className="grid grid-cols-2 gap-3 px-1">
+            {appShowcaseFeatures.map((feature, i) => (
+              <motion.div
+                key={feature.slug}
+                initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.06, duration: 0.35 }}
+              >
+                <ExpandableFeatureCard
+                  item={showcaseToCard(feature)}
+                  layoutId={layoutId}
+                  onSelect={setActive}
+                  className="!min-w-0 !max-w-none w-full"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== DESKTOP / TABLET: scatter layout ===== */}
+        <div className="relative mx-auto mt-6 hidden md:block h-[640px] lg:h-[min(720px,82vh)] lg:min-h-[640px] w-full max-w-6xl overflow-visible">
+          <div className="absolute inset-0 md:scale-[0.75] lg:scale-100 origin-center">
             <div
               className="pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
               aria-hidden
@@ -189,7 +216,7 @@ export function ModuleGridSection() {
           </div>
         </div>
 
-        <p className="mt-20 text-center text-sm text-slate-500">
+        <p className="mt-8 md:mt-20 text-center text-sm text-slate-500">
           <span className="font-semibold text-slate-800">12+ modules</span> · 4 roles · one app
         </p>
       </div>
