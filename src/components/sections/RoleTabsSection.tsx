@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Building2, CheckCircle, Home, TrendingUp } from "lucide-react";
+import { Building2, CheckCircle, Home } from "lucide-react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { roleTabs, type RoleTabKey } from "@/lib/content";
 

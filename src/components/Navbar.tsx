@@ -26,12 +26,12 @@ export default function Navbar() {
         initial={{ y: -18, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl"
+        className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 shadow-[0_8px_30px_-22px_rgba(15,23,42,0.22)] backdrop-blur-xl"
       >
-        <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-3 px-3 sm:gap-6 sm:px-6 lg:px-10 xl:px-12">
+        <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-3 px-4 sm:gap-6 sm:px-6 lg:h-[72px] lg:px-10 xl:px-12">
           <Link
             href="/"
-            className="flex h-20 w-[160px] shrink-0 items-center justify-center overflow-hidden sm:w-[220px]"
+            className="flex h-16 w-[132px] shrink-0 items-center justify-start overflow-hidden sm:w-[172px] lg:h-[72px]"
             aria-label={`${siteConfig.name} home`}
           >
             <Image
@@ -40,7 +40,7 @@ export default function Navbar() {
               width={824}
               height={264}
               priority
-              className="h-[180px] w-[180px] max-w-none object-contain mix-blend-multiply sm:h-[230px] sm:w-[230px]"
+              className="h-[116px] w-[116px] max-w-none object-contain mix-blend-multiply sm:h-[152px] sm:w-[152px]"
             />
           </Link>
 

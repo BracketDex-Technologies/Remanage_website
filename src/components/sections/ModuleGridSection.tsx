@@ -59,7 +59,7 @@ function StaticPhoneMock({
         <div className="bg-gradient-to-b from-slate-50 to-white px-4 pb-28 pt-3">
           <div className="mb-3 flex justify-between text-[10px] font-semibold text-slate-500">
             <span>9:41</span>
-            <span className="rounded-full bg-slate-900/5 px-2.5 py-0.5">SmartSocietyHub</span>
+            <span className="rounded-full bg-slate-900/5 px-2.5 py-0.5">ReManage</span>
           </div>
 
           <div className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-slate-100">
@@ -67,7 +67,7 @@ function StaticPhoneMock({
               A4
             </span>
             <div>
-              <p className="text-sm font-semibold text-slate-900">Flat 402 · Tower B</p>
+              <p className="text-sm font-semibold text-slate-900">Flat 402 - Tower B</p>
               <p className="text-xs text-slate-500">Good evening</p>
             </div>
           </div>
@@ -75,7 +75,7 @@ function StaticPhoneMock({
           <div className="mt-3 grid grid-cols-2 gap-2.5">
             <div className="rounded-xl bg-amber-50 p-3 ring-1 ring-amber-100">
               <p className="text-[10px] font-bold uppercase tracking-wide text-amber-700">Dues</p>
-              <p className="font-heading text-lg font-bold text-slate-900">₹3,500</p>
+              <p className="font-heading text-lg font-bold text-slate-900">Rs. 3,500</p>
             </div>
             <div className="rounded-xl bg-emerald-50 p-3 ring-1 ring-emerald-100">
               <p className="text-[10px] font-bold uppercase tracking-wide text-emerald-700">Gate</p>
@@ -88,10 +88,10 @@ function StaticPhoneMock({
           </p>
           <div className="mt-2 space-y-2">
             <div className="rounded-xl bg-white p-3 text-xs text-slate-600 shadow-sm ring-1 ring-slate-100">
-              AGM reminder · Saturday 10 AM
+              AGM reminder - Saturday 10 AM
             </div>
             <div className="rounded-xl bg-white p-3 text-xs text-slate-600 shadow-sm ring-1 ring-slate-100">
-              Visitor approved · Swiggy delivery
+              Visitor approved - Swiggy delivery
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export function ModuleGridSection() {
             Full-spectrum society management
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
-            SmartSocietyHub — your resident super-app. Tap any module to read more, or explore
+            ReManage Society is your resident super-app. Tap any module to read more, or explore
             everything on the features page.
           </p>
           <Link
@@ -152,7 +152,7 @@ export function ModuleGridSection() {
 
         {/* ===== MOBILE / SMALL TABLET: stacked phone + grid ===== */}
         <div className="mt-10 md:hidden">
-          {/* Phone mockup — readable size */}
+          {/* Phone mockup - readable size */}
           <div className="mx-auto mb-12 w-full max-w-[280px]">
             <StaticPhoneMock layoutId={layoutId} onQuickSelect={setActive} />
           </div>
@@ -217,7 +217,7 @@ export function ModuleGridSection() {
         </div>
 
         <p className="mt-8 md:mt-20 text-center text-sm text-slate-500">
-          <span className="font-semibold text-slate-800">12+ modules</span> · 4 roles · one app
+          <span className="font-semibold text-slate-800">12+ modules</span> - 4 roles - one app
         </p>
       </div>
     </section>
