@@ -25,10 +25,7 @@ export function HeroSection() {
     <section className="overflow-hidden bg-white">
       <div className="mx-auto max-w-[1440px] px-4 pb-8 pt-6 sm:px-6 sm:pb-16 sm:pt-12 lg:px-10 lg:pb-20 lg:pt-14">
         <motion.div initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="mx-auto max-w-5xl text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-orange-700 sm:text-[11px] sm:tracking-[0.16em]">
-            <Sparkles className="h-3.5 w-3.5" />
-            Society operations that do the busywork
-          </p>
+
           <h1 className="mx-auto mt-4 max-w-5xl font-heading text-[1.92rem] font-semibold leading-[1.03] tracking-[-0.026em] text-slate-950 sm:mt-5 sm:text-[clamp(2.5rem,6.4vw,5.9rem)] sm:leading-[0.98] sm:tracking-[-0.045em]">
             <span className="sm:hidden">Run society workflows from one place</span>
             <span className="hidden sm:inline">Run every society workflow from one place</span>
