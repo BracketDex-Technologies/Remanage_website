@@ -78,21 +78,93 @@ export function MobileApkSection() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative flex items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-br from-orange-50 via-white to-sky-50 px-6 py-10"
+            className="relative w-full rounded-2xl border border-slate-200 bg-gradient-to-br from-orange-50/60 via-white to-sky-50/40 p-4 sm:p-6 md:p-8 lg:p-10 overflow-hidden"
           >
-            <div className="relative z-10 transform transition-transform duration-500 hover:scale-[1.02] hover:-rotate-1">
-              <div className="rounded-[2rem] bg-white p-2 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.25),0_0_0_1px_rgba(0,0,0,0.05)]">
-                <Image
-                  src="/mobile_mockup.png"
-                  alt="ReManage Society mobile app - resident dashboard, visitor approvals, bill payments"
-                  width={600}
-                  height={1200}
-                  className="w-full max-w-[460px] h-auto mx-auto rounded-[1.5rem]"
-                  quality={100}
-                  priority
-                />
+            {/* Desktop Overlapping Fan Layout */}
+            <div className="relative hidden md:block h-[510px] w-full max-w-[560px] mx-auto">
+              {/* Left Phone */}
+              <div className="absolute left-[5%] top-[55px] w-[180px] lg:w-[190px] -rotate-6 rounded-[2rem] bg-slate-950 p-1.5 shadow-xl ring-1 ring-slate-900/10 transition-all duration-500 hover:z-30 hover:scale-105 hover:rotate-0">
+                <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                  <Image
+                    src="/images/MobileUI.jpeg"
+                    alt="Resident App Home"
+                    width={300}
+                    height={610}
+                    className="w-full h-auto object-cover"
+                    quality={95}
+                  />
+                </div>
+              </div>
+
+              {/* Right Phone */}
+              <div className="absolute right-[5%] top-[55px] w-[180px] lg:w-[190px] rotate-6 rounded-[2rem] bg-slate-950 p-1.5 shadow-xl ring-1 ring-slate-900/10 transition-all duration-500 hover:z-30 hover:scale-105 hover:rotate-0">
+                <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                  <Image
+                    src="/images/Services UI.jpeg"
+                    alt="Services & Helpers UI"
+                    width={300}
+                    height={610}
+                    className="w-full h-auto object-cover"
+                    quality={95}
+                  />
+                </div>
+              </div>
+
+              {/* Center Phone */}
+              <div className="absolute left-1/2 top-0 w-[190px] lg:w-[200px] -translate-x-1/2 rounded-[2rem] bg-slate-950 p-1.5 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.4)] ring-1 ring-slate-900/10 transition-all duration-500 z-20 hover:scale-105">
+                <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                  <Image
+                    src="/images/MySociety.jpeg"
+                    alt="My Society Management"
+                    width={300}
+                    height={610}
+                    className="w-full h-auto object-cover"
+                    quality={95}
+                    priority
+                  />
+                </div>
               </div>
             </div>
+
+            {/* Mobile/Tablet Swipeable Layout */}
+            <div className="flex md:hidden w-full gap-4 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] justify-start px-2">
+              <div className="w-[210px] shrink-0 snap-center rounded-[2rem] bg-slate-950 p-1.5 shadow-lg ring-1 ring-slate-900/10">
+                <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                  <Image
+                    src="/images/MobileUI.jpeg"
+                    alt="Resident App Home"
+                    width={300}
+                    height={610}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              <div className="w-[210px] shrink-0 snap-center rounded-[2rem] bg-slate-950 p-1.5 shadow-xl ring-1 ring-slate-900/10">
+                <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                  <Image
+                    src="/images/MySociety.jpeg"
+                    alt="My Society Management"
+                    width={300}
+                    height={610}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              <div className="w-[210px] shrink-0 snap-center rounded-[2rem] bg-slate-950 p-1.5 shadow-lg ring-1 ring-slate-900/10">
+                <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                  <Image
+                    src="/images/Services UI.jpeg"
+                    alt="Services & Helpers UI"
+                    width={300}
+                    height={610}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-[10px] font-semibold text-slate-400 md:hidden">
+              Swipe to see more app screens
+            </p>
           </motion.div>
 
         </div>

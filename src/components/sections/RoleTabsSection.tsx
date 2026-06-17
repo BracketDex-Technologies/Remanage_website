@@ -107,7 +107,7 @@ export function RoleTabsSection() {
                         Resident app preview
                       </p>
                       <Image
-                        src="/images/mobile_mockup.jpeg"
+                        src="/images/MobileUI.jpeg"
                         alt="Resident mobile app — visitor approvals, bill payments, quick actions"
                         width={400}
                         height={700}
