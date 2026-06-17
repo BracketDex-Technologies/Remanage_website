@@ -100,8 +100,8 @@ export function MobileApkSection() {
               <div className="absolute right-[5%] top-[55px] w-[180px] lg:w-[190px] rotate-6 rounded-[2rem] bg-slate-950 p-1.5 shadow-xl ring-1 ring-slate-900/10 transition-all duration-500 hover:z-30 hover:scale-105 hover:rotate-0">
                 <div className="overflow-hidden rounded-[1.75rem] bg-white">
                   <Image
-                    src="/images/Services UI.jpeg"
-                    alt="Services & Helpers UI"
+                    src="/images/Watchemen_Ui.jpeg"
+                    alt="Security Guard UI"
                     width={300}
                     height={610}
                     className="w-full h-auto object-cover"
@@ -144,6 +144,17 @@ export function MobileApkSection() {
                   <Image
                     src="/images/MySociety.jpeg"
                     alt="My Society Management"
+                    width={300}
+                    height={610}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              <div className="w-[210px] shrink-0 snap-center rounded-[2rem] bg-slate-950 p-1.5 shadow-lg ring-1 ring-slate-900/10">
+                <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                  <Image
+                    src="/images/Watchemen_Ui.jpeg"
+                    alt="Security Guard UI"
                     width={300}
                     height={610}
                     className="w-full h-auto object-cover"

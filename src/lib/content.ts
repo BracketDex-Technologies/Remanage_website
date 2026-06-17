@@ -382,6 +382,21 @@ export const roleTabs = {
     ],
     color: "from-orange-600 to-violet-600",
   },
+  security: {
+    id: "security",
+    title: "Security & Guards",
+    tagline: "Gate security that actually works",
+    description:
+      "Provide guards with a high-performance terminal to register entries, check approvals, and alert residents without calling Flat numbers.",
+    features: [
+      "Quick visitor check-in with photos",
+      "Resident pre-approval lookup",
+      "Delivery and cab entry validation",
+      "SOS emergency instant alerts",
+      "Domestic staff & helper tracking",
+    ],
+    color: "from-orange-600 to-emerald-600",
+  },
 } as const;
 
 export type RoleTabKey = keyof typeof roleTabs;

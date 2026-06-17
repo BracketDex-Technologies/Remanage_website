@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Building2, CheckCircle, Home } from "lucide-react";
+import { Building2, CheckCircle, Home, Shield } from "lucide-react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { roleTabs, type RoleTabKey } from "@/lib/content";
 
@@ -12,6 +12,7 @@ const tabKeys = Object.keys(roleTabs) as RoleTabKey[];
 const tabMeta: Record<RoleTabKey, { icon: typeof Home; hint: string }> = {
   residents: { icon: Home, hint: "Daily living & gate" },
   committee: { icon: Building2, hint: "RWA & treasury" },
+  security: { icon: Shield, hint: "Gate terminal & logs" },
 };
 
 export function RoleTabsSection() {
@@ -101,7 +102,7 @@ export function RoleTabsSection() {
 
                 {/* Dashboard preview screenshot */}
                 <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm">
-                  {activeTab === "residents" ? (
+                  {activeTab === "residents" && (
                     <div className="relative">
                       <p className="bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
                         Resident app preview
@@ -114,16 +115,31 @@ export function RoleTabsSection() {
                         className="h-auto w-full object-cover"
                       />
                     </div>
-                  ) : (
+                  )}
+                  {activeTab === "committee" && (
                     <div className="relative">
                       <p className="bg-gradient-to-r from-violet-500 to-violet-600 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
                         Committee dashboard preview
                       </p>
                       <Image
-                        src="/images/committee-dashboard-preview.png"
+                        src="/images/DesktopViewChairman.png"
                         alt="Committee dashboard — collection progress, expenses, notice delivery"
                         width={600}
                         height={500}
+                        className="h-auto w-full object-cover"
+                      />
+                    </div>
+                  )}
+                  {activeTab === "security" && (
+                    <div className="relative">
+                      <p className="bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                        Security guard app preview
+                      </p>
+                      <Image
+                        src="/images/Watchemen_Ui.jpeg"
+                        alt="Security guard terminal app — check-ins, resident approvals, SOS alerts"
+                        width={400}
+                        height={700}
                         className="h-auto w-full object-cover"
                       />
                     </div>
