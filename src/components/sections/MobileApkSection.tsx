@@ -75,6 +75,8 @@ export function MobileApkSection() {
                 <a
                   href={siteConfig.links.apk}
                   download="ReManage-Society-release.apk"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex h-11 items-center gap-2 bg-white px-6 py-2.5 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-50 hover:text-orange-600"
                 >
                   Download APK <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />

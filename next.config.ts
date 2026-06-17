@@ -6,6 +6,23 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  async headers() {
+    return [
+      {
+        source: "/(.*).apk",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/vnd.android.package-archive",
+          },
+          {
+            key: "Content-Disposition",
+            value: "attachment",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
