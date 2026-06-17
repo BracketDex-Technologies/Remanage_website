@@ -7,7 +7,9 @@ import {
   ArrowRight,
   CheckCircle2,
   Sun,
+  Download,
 } from "lucide-react";
+import { siteConfig } from "@/lib/site";
 
 const highlights = [
   "Resident dashboard and quick actions",
@@ -59,6 +61,24 @@ export function MobileApkSection() {
                 >
                   Request mobile demo <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -3, scale: 1.015 }}
+                whileTap={{ scale: 0.985 }}
+                transition={{ type: "spring", stiffness: 420, damping: 28 }}
+                className="group relative overflow-hidden rounded-full border border-slate-200"
+              >
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-4 top-0 h-px -translate-x-full bg-gradient-to-r from-transparent via-orange-400 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                />
+                <a
+                  href={siteConfig.links.apk}
+                  download="ReManage-Society-release.apk"
+                  className="inline-flex h-11 items-center gap-2 bg-white px-6 py-2.5 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-50 hover:text-orange-600"
+                >
+                  Download APK <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+                </a>
               </motion.div>
               <motion.div
                 whileHover={{ y: -2 }}
@@ -127,7 +147,7 @@ export function MobileApkSection() {
             </div>
 
             {/* Mobile/Tablet Swipeable Layout */}
-            <div className="flex md:hidden w-full gap-4 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] justify-start px-2">
+            <div className="flex md:hidden w-full space-x-4 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] justify-start px-2">
               <div className="w-[210px] shrink-0 snap-center rounded-[2rem] bg-slate-950 p-1.5 shadow-lg ring-1 ring-slate-900/10">
                 <div className="overflow-hidden rounded-[1.75rem] bg-white">
                   <Image

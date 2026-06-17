@@ -18,7 +18,7 @@ export const siteConfig = {
   },
   links: {
     app: appBase ?? fallbackAppPath,
-    apk: process.env.NEXT_PUBLIC_APK_URL ?? "/contact",
+    apk: process.env.NEXT_PUBLIC_APK_URL ?? "/images/ReManage-Society-release.apk",
     login: appBase ? `${appBase}/login` : fallbackAppPath,
     register: appBase ? `${appBase}/register` : fallbackAppPath,
     gate: appBase ? `${appBase}/gate` : fallbackAppPath,

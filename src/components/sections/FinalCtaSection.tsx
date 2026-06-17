@@ -64,7 +64,7 @@ export function FinalCtaSection() {
                 variant="ghost"
                 className="w-full justify-center border border-white/25 text-white transition-shadow duration-300 hover:bg-white/10 hover:text-white group-hover:shadow-lg group-hover:shadow-slate-950/10"
               >
-                <a href={siteConfig.links.apk}>
+                <a href={siteConfig.links.apk} download="ReManage-Society-release.apk">
                   <Download className="transition-transform duration-300 group-hover:-translate-y-0.5" />
                   Download resident app
                 </a>
