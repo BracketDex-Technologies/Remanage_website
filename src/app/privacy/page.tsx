@@ -5,6 +5,7 @@ import { Shield, Lock, ArrowRight, UserCheck } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/lib/site";
 
 const sections = [
   {
@@ -247,7 +248,7 @@ export default function PrivacyPage() {
                     </p>
                   </div>
                   <Link
-                    href="mailto:demo@remanagesociety.com"
+                    href={`mailto:${siteConfig.contact.email}`}
                     className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-5 py-3 text-xs font-bold text-white hover:bg-orange-600 transition-colors shadow-sm"
                   >
                     Email DPO
