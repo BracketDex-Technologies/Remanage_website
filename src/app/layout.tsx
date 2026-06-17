@@ -72,6 +72,7 @@ export default function RootLayout({
       className={`${inter.variable} ${plusJakartaSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-base text-slate-900">
+        <CursorSpotlight />
         {children}
       </body>
     </html>

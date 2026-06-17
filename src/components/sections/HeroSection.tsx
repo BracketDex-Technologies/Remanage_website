@@ -6,6 +6,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check, CircleDollarSign, KeyRound, MessageSquareText, Scale, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
+import { TiltCard } from "@/components/ui/tilt-card";
+import { MagneticWrap } from "@/components/ui/magnetic-wrap";
 
 const outcomes = [
   { icon: KeyRound, label: "Fewer gate calls" },
@@ -34,8 +36,12 @@ export function HeroSection() {
             {siteConfig.description}
           </p>
           <div className="mt-4 flex flex-col justify-center gap-3 sm:mt-8 sm:flex-row">
-            <Button asChild size="lg" className="bg-orange-600 px-8 shadow-lg shadow-orange-600/20 hover:bg-orange-700"><Link href="/contact">Get started <ArrowRight /></Link></Button>
-            <Button asChild size="lg" variant="outline" className="hidden border-slate-300 bg-white px-8 shadow-sm sm:inline-flex"><Link href="/features">See the platform</Link></Button>
+            <MagneticWrap strength={0.25}>
+              <Button asChild size="lg" className="bg-orange-600 px-8 shadow-lg shadow-orange-600/20 hover:bg-orange-700"><Link href="/contact">Get started <ArrowRight /></Link></Button>
+            </MagneticWrap>
+            <MagneticWrap strength={0.25}>
+              <Button asChild size="lg" variant="outline" className="hidden border-slate-300 bg-white px-8 shadow-sm sm:inline-flex"><Link href="/features">See the platform</Link></Button>
+            </MagneticWrap>
           </div>
 
           {/* Starting price anchor */}
@@ -87,7 +93,8 @@ export function HeroSection() {
         </motion.div>
 
         <div className="mt-5 grid gap-3 sm:mt-9 md:grid-cols-[1.08fr_0.92fr] lg:mt-10">
-          <motion.div initial={reduceMotion ? false : { opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="relative min-h-[168px] overflow-hidden rounded-xl bg-slate-950 sm:min-h-[340px] md:min-h-[400px]">
+          <TiltCard intensity={5} className="relative min-h-[168px] overflow-hidden rounded-xl bg-slate-950 sm:min-h-[340px] md:min-h-[400px]">
+            <motion.div initial={reduceMotion ? false : { opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="absolute inset-0">
             <Image src="/images/hero-bg.jpg" alt="Residential community managed with ReManage Society" fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-75" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
             <motion.div
@@ -125,8 +132,10 @@ export function HeroSection() {
                 <span className="hidden sm:inline">One dependable record for the work that keeps a society running.</span>
               </p>
             </div>
-          </motion.div>
-          <motion.div initial={reduceMotion ? false : { opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="hidden min-h-[300px] flex-col justify-between rounded-xl bg-orange-600 p-6 text-white md:flex md:min-h-[400px] md:p-8">
+            </motion.div>
+          </TiltCard>
+          <TiltCard intensity={4} className="hidden min-h-[300px] flex-col justify-between rounded-xl bg-orange-600 p-6 text-white md:flex md:min-h-[400px] md:p-8">
+            <motion.div initial={reduceMotion ? false : { opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.6 }} className="flex h-full flex-col justify-between">
             <div className="flex items-center justify-between"><ShieldCheck className="h-7 w-7" /><span className="rounded-full border border-white/30 px-3 py-1 text-[10px] font-bold uppercase tracking-wider">Committee-first</span></div>
             <div>
               <p className="max-w-xl font-heading text-2xl font-semibold leading-tight tracking-[-0.025em] sm:text-5xl">Less time coordinating. More time improving the community.</p>
@@ -145,6 +154,7 @@ export function HeroSection() {
               </ul>
             </div>
           </motion.div>
+          </TiltCard>
         </div>
         <div className="mt-5 hidden flex-wrap justify-center gap-x-6 gap-y-2 sm:flex">
           {["Guided onboarding", "Role-based access", "Exportable records"].map(item => <span key={item} className="flex items-center gap-1.5 text-xs font-medium text-slate-500"><Check className="h-3.5 w-3.5 text-orange-600" />{item}</span>)}
