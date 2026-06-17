@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
+import { CursorSpotlight } from "@/components/ui/cursor-spotlight";
 
 const inter = Inter({
   variable: "--font-inter",

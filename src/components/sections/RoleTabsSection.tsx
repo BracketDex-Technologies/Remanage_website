@@ -186,12 +186,10 @@ export function RoleTabsSection() {
                     initial={{ rotate: -3, scale: 0.95 }}
                     animate={{ rotate: 0, scale: 1 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="relative z-10 w-[200px] sm:w-[220px] lg:w-[240px]"
+                    className="relative z-10 w-[200px] pb-10 sm:w-[220px] lg:w-[240px]"
                   >
-                    {/* Device frame */}
+                    {/* Device frame — no notch so app top bar is visible */}
                     <div className="rounded-[2.5rem] bg-slate-900 p-2 shadow-2xl shadow-slate-900/30 ring-1 ring-slate-800">
-                      {/* Notch */}
-                      <div className="absolute left-1/2 top-2 z-20 h-6 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-900" />
                       <div className="overflow-hidden rounded-[2rem] bg-white">
                         <Image
                           src={meta.image}
@@ -203,9 +201,9 @@ export function RoleTabsSection() {
                         />
                       </div>
                     </div>
-                    {/* Label badge */}
+                    {/* Label badge — shifted below phone bottom edge */}
                     <div
-                      className={`absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r ${meta.previewGradient} px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white shadow-lg`}
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-to-r ${meta.previewGradient} px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white shadow-lg`}
                     >
                       {meta.previewLabel}
                     </div>
