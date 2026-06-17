@@ -28,7 +28,7 @@ export function HowItWorksSection() {
         />
       </div>
 
-      <div className="pointer-events-none relative z-10 mx-auto flex min-h-full flex-col max-w-7xl px-4 sm:px-6 lg:px-10 xl:px-12">
+      <div className="relative z-10 mx-auto flex min-h-full flex-col max-w-7xl px-4 sm:px-6 lg:px-10 xl:px-12">
         <div className="pt-10 pb-6 md:pt-12 md:pb-6">
           <SectionHeading
             badge="Implementation"
@@ -41,7 +41,7 @@ export function HowItWorksSection() {
         </div>
 
         {/* Mobile & Tablet View: Vertical Stack */}
-        <div className="md:hidden pointer-events-auto flex flex-col gap-4 px-1 py-2">
+        <div className="md:hidden flex flex-col gap-4 py-2">
           {howItWorks.map((item, index) => (
             <motion.div
               key={item.step}
@@ -49,7 +49,7 @@ export function HowItWorksSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="relative rounded-2xl border border-white/15 bg-white/[0.06] px-5 py-6 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.25)] overflow-hidden"
+              className="relative rounded-2xl border border-white/15 bg-white/[0.06] px-5 py-6 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.25)]"
             >
               <GlowingEffect
                 spread={40}
@@ -72,7 +72,7 @@ export function HowItWorksSection() {
         </div>
 
         {/* Laptop View: Horizontal 3-Columns */}
-        <div className="hidden md:grid pointer-events-auto gap-px border border-white/20 bg-white/5 grid-cols-3 flex-1">
+        <div className="hidden md:grid gap-px border border-white/20 bg-white/5 grid-cols-3 flex-1">
           {howItWorks.map((item, index) => (
             <motion.div
               key={item.step}
@@ -100,7 +100,7 @@ export function HowItWorksSection() {
           ))}
         </div>
 
-        <div className="pointer-events-none flex flex-col gap-5 border-t border-white/15 py-6 md:py-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-5 border-t border-white/15 py-6 md:py-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="grid flex-1 grid-cols-3 gap-4">
             {stats.map((stat) => (
               <div key={stat.label} className="border-l border-orange-400/40 pl-4">
