@@ -28,7 +28,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-14 flex flex-col gap-3 border-t border-slate-200 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>&copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.</span>
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
+            <span>&copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.</span>
+            <span className="hidden sm:inline text-slate-300">|</span>
+            <span className="font-semibold text-slate-600">Powered by BracketDex Technologies</span>
+          </div>
           <span>Pune, India</span>
         </div>
       </div>

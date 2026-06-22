@@ -11,10 +11,10 @@ export const siteConfig = {
     "Approve visitors, pay maintenance, and keep notices, complaints, and records in one secure place — without gate calls or scattered group chats.",
   contact: {
     email: "bracketdevs.teams@gmail.com",
-    phone: "+91 98765 43210",
-    whatsapp: "https://wa.me/911800181800",
-    whatsappDisplay: "+91-1800181800",
-    call: "tel:+911800181800",
+    phone: "+91 8605589062",
+    whatsapp: "https://wa.me/918605589062",
+    whatsappDisplay: "+91 8605589062",
+    call: "tel:+918605589062",
   },
   links: {
     app: appBase ?? fallbackAppPath,
