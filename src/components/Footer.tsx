@@ -31,7 +31,9 @@ export default function Footer() {
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
             <span>&copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.</span>
             <span className="hidden sm:inline text-slate-300">|</span>
-            <span className="font-semibold text-slate-600">Powered by BracketDex Technologies</span>
+            <a href="https://www.bracketdex.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-slate-600 hover:text-orange-600 transition-colors">
+              Powered by BracketDex Technologies
+            </a>
           </div>
           <span>Pune, India</span>
         </div>
